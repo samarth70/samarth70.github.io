@@ -217,6 +217,16 @@ p {
     left: 0;
 }
 
+.achievement-category li a {
+    text-decoration: none;
+    color: #0a192f;
+    transition: color 0.3s ease;
+}
+
+.achievement-category li a:hover {
+    color: #64ffda;
+}
+
 /* Contact section */
 .contact-links {
     display: grid;
