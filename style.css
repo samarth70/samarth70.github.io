@@ -204,6 +204,8 @@ p {
 }
 
 .achievement-category li {
+    margin-right: 10px;
+    color: #64ffda;    
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
