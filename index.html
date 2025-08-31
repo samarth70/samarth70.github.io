@@ -6,7 +6,7 @@
     <title>Samarth Agarwal - AI & Data Science Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 </head>
 <body>
     <!-- Scroll Progress Indicator -->
@@ -35,25 +35,48 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section gradient-bg">
             <div class="hero-content">
-                <h1>Samarth Agarwal</h1>
-                <h2>AI & Data Science Specialist | Building Intelligent Systems</h2>
-                <p class="hero-subtitle">Master's in Data Science @ Stony Brook | Generative AI Engineer | Winner of GSolve.ai Hackathon 2023</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                    <a href="#contact" class="btn-secondary">Get In Touch</a>
+                <div class="profile-container">
+                    <div class="profile-circle">
+                        <div class="profile-image"></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/samarth-agarwal" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/samarth70" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://huggingface.co/Sa-m" target="_blank" title="Hugging Face">
+                            <i class="fas fa-brain"></i>
+                        </a>
+                        <a href="mailto:samarth.agarwal@stonybrook.edu" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-value">2+</span>
-                        <span class="stat-label">Years Professional Experience</span>
+                <div class="hero-text">
+                    <h1>Samarth Agarwal</h1>
+                    <h2>AI & Data Science Specialist</h2>
+                    <p class="hero-subtitle">Master's in Data Science @ Stony Brook | Salesforce Certified AI Associate | Winner of GSolve.ai Hackathon 2023</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">2+</span>
+                            <span class="stat-label">Years Professional Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">5+</span>
+                            <span class="stat-label">Production AI Systems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Hackathon Wins</span>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value">5+</span>
-                        <span class="stat-label">Production AI Systems</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">3</span>
-                        <span class="stat-label">Hackathon Wins</span>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
                     </div>
                 </div>
             </div>
@@ -69,16 +92,6 @@
                     <p>With professional experience at Genpact as a Senior Associate Developer and current work in Generative AI at ARMA AI Labs, I specialize in creating robust AI solutions that deliver measurable business value. My recent work focuses on LLM evaluation frameworks, prompt engineering optimization, and building NLP applications that solve real-world problems.</p>
                     
                     <p>As a Salesforce Certified AI Associate and winner of the GSolve.ai ML Hackathon 2023, I combine technical excellence with a business-oriented mindset to deliver solutions that are both innovative and practical.</p>
-                </div>
-                <div class="about-image">
-                    <div class="profile-circle">
-                        <div class="profile-image"></div>
-                    </div>
-                    <div class="profile-info">
-                        <h3>Education</h3>
-                        <p><strong>MS Data Science</strong><br>SUNY Stony Brook University<br>2024 Aug - 2026 Jun</p>
-                        <p><strong>BS Computer Science</strong><br>Amity University<br>2018 - 2022</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -361,37 +374,22 @@
             <h2>Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card advanced-card glass-card">
-                    <div class="project-badge">NLP • Data Visualization</div>
                     <div class="project-image-container">
                         <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/space_screenshot/https___sa-m-manifesto-explainer.hf.space_.png" alt="Manifesto Explainer Interface" class="project-image">
                         <div class="image-overlay">
-                            <button class="demo-btn">Live Demo</button>
+                            <a href="https://sa-m-manifesto-explainer.hf.space/" target="_blank" class="demo-btn">Live Demo</a>
                         </div>
                     </div>
                     <h3>Manifesto Explainer</h3>
-                    <p class="project-subtitle">An unbiased NLP approach to analyze political party manifestos with sentiment analysis and visualizations</p>
+                    <p class="project-subtitle">NLP • Data Visualization • Political Analysis</p>
                     
-                    <div class="project-features">
-                        <span class="feature-tag">PDF Upload</span>
-                        <span class="feature-tag">Search Analysis</span>
-                        <span class="feature-tag">AI Summary</span>
-                        <span class="feature-tag">Visualizations</span>
-                    </div>
-                    
-                    <p class="project-description">
-                        Developed an advanced NLP system that analyzes political manifestos through multiple lenses including sentiment analysis, topic modeling, and search term analysis. The application features a comprehensive UI with PDF upload functionality, search term analysis, and visual data representations.
-                    </p>
-                    
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>NLTK</span>
-                        <span>Streamlit</span>
-                        <span>Hugging Face</span>
+                    <div class="project-description">
+                        An unbiased NLP approach to analyze political party manifestos with sentiment analysis and visualizations. Features PDF upload, search term analysis, AI summaries, and interactive visualizations. Built with Python, NLTK, Streamlit, and deployed on Hugging Face.
                     </div>
                     
                     <div class="project-links">
                         <a href="https://sa-m-manifesto-explainer.hf.space/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                            <i class="fas fa-external-link-alt"></i> View Project
                         </a>
                         <a href="https://github.com/samarth70/manifesto-explainer" target="_blank" class="project-link secondary">
                             <i class="fab fa-github"></i> Code
@@ -400,37 +398,22 @@
                 </div>
                 
                 <div class="project-card advanced-card glass-card">
-                    <div class="project-badge">AI • Full Stack</div>
                     <div class="project-image-container">
-                        <img src="https://via.placeholder.com/400x250/0a192f/64ffda?text=PrepGenie+Mock+Interview" alt="PrepGenie Mock Interview Interface" class="project-image">
+                        <img src="https://via.placeholder.com/400x250/0a192f/00C9A7?text=PrepGenie+Mock+Interview" alt="PrepGenie Mock Interview Interface" class="project-image">
                         <div class="image-overlay">
-                            <button class="demo-btn">Live Demo</button>
+                            <a href="#" class="demo-btn">Live Demo</a>
                         </div>
                     </div>
                     <h3>PrepGenie</h3>
-                    <p class="project-subtitle">AI-powered mock interview and resume assistant</p>
+                    <p class="project-subtitle">AI • Full Stack • Interview Preparation</p>
                     
-                    <div class="project-features">
-                        <span class="feature-tag">Resume Analysis</span>
-                        <span class="feature-tag">Voice Interviews</span>
-                        <span class="feature-tag">AI Feedback</span>
-                        <span class="feature-tag">Role-Specific</span>
-                    </div>
-                    
-                    <p class="project-description">
-                        Spearheaded the design and deployment of an AI mock interview engine that enables users to upload resumes, select target roles, and practice answering tailored questions via text or voice. Implemented AI feedback system using Google Gemini and BERT embeddings to deliver context-aware critique aligned with users' resume content.
-                    </p>
-                    
-                    <div class="tech-stack">
-                        <span>Google Gemini</span>
-                        <span>BERT</span>
-                        <span>Firebase</span>
-                        <span>Gradio</span>
+                    <div class="project-description">
+                        AI-powered mock interview and resume assistant. Enables users to upload resumes, select target roles, and practice answering tailored questions via text or voice. Uses Google Gemini and BERT embeddings for context-aware feedback.
                     </div>
                     
                     <div class="project-links">
                         <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                            <i class="fas fa-external-link-alt"></i> View Project
                         </a>
                         <a href="#" class="project-link secondary">
                             <i class="fab fa-github"></i> Code
@@ -439,37 +422,22 @@
                 </div>
                 
                 <div class="project-card advanced-card glass-card">
-                    <div class="project-badge">Deep Learning • Computer Vision</div>
                     <div class="project-image-container">
                         <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/space_screenshot/https___sa-m-neural-style-transfer-image-stylization.hf.space_.png" alt="Neural Style Transfer Examples" class="project-image">
                         <div class="image-overlay">
-                            <button class="demo-btn">Try It</button>
+                            <a href="https://sa-m-neural-style-transfer-image-stylization.hf.space/" target="_blank" class="demo-btn">Live Demo</a>
                         </div>
                     </div>
                     <h3>Neural Style Transfer</h3>
-                    <p class="project-subtitle">Artistic image blending using deep learning techniques</p>
+                    <p class="project-subtitle">Deep Learning • Computer Vision • Image Processing</p>
                     
-                    <div class="project-features">
-                        <span class="feature-tag">Content-Style Blending</span>
-                        <span class="feature-tag">Fast Style Transfer</span>
-                        <span class="feature-tag">Image Optimization</span>
-                        <span class="feature-tag">Web Deployment</span>
-                    </div>
-                    
-                    <p class="project-description">
-                        Developed a deep learning model that produces artistic images by blending content and style images. Implemented fast style transfer techniques and improved the model by applying gray scaling and rescaling. Deployed as a user-friendly web application on Hugging Face.
-                    </p>
-                    
-                    <div class="tech-stack">
-                        <span>PyTorch</span>
-                        <span>FastAI</span>
-                        <span>Hugging Face</span>
-                        <span>Streamlit</span>
+                    <div class="project-description">
+                        Produces artistic images by blending content and style images. Implements fast style transfer techniques with deep learning. Improved the model by applying gray scaling and rescaling. Deployed as a user-friendly web application on Hugging Face.
                     </div>
                     
                     <div class="project-links">
                         <a href="https://sa-m-neural-style-transfer-image-stylization.hf.space/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                            <i class="fas fa-external-link-alt"></i> View Project
                         </a>
                         <a href="#" class="project-link secondary">
                             <i class="fab fa-github"></i> Code
@@ -481,11 +449,12 @@
 
         <!-- Achievements Section -->
         <section id="achievements" class="section">
-            <h2>Certifications & Achievements</h2>
+            <h2>Certifications & Key Achievements</h2>
             
             <div class="achievements-container advanced">
                 <div class="achievement-category">
-                    <h3>Certifications</h3>
+                    <h3>Professional Certifications</h3>
+                    
                     <div class="certification-card glass-card">
                         <div class="cert-badge">
                             <img src="https://www.salesforce.com/content/dam/web/en_us/www/images/certification/AI-Associate-Badge.png" alt="Salesforce Certified AI Associate">
@@ -508,8 +477,22 @@
                             </div>
                         </div>
                         <h4>Machine Learning Data Lifecycle in Production</h4>
-                        <p>DeepLearning.ai specialization focusing on deploying ML models in production environments</p>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/8LQX9CVGMRPF" target="_blank" class="cert-link">
+                        <p>Specialization focusing on deploying ML models in production environments, covering data pipelines, model deployment, and monitoring</p>
+                        <a href="https://coursera.org/verify/8LQX9CVGMRPF" target="_blank" class="cert-link">
+                            <i class="fas fa-external-link-alt"></i> Verify Credential
+                        </a>
+                    </div>
+                    
+                    <div class="certification-card glass-card">
+                        <div class="cert-badge">
+                            <img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/wJj8lJ2pEemZiBIACm7qLg_3e126c0b3c3b46b1a31d7d5e1c6c1c6c_IBM-Logo.png?expiry=1718870400000&hmac=KvYiJ4jL7mN0eNqTQqZ7ZqQqZ7ZqQqZ7" alt="IBM Machine Learning Certificate">
+                            <div class="verified-badge">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <h4>Machine Learning with Python</h4>
+                        <p>Comprehensive IBM course covering regression, classification, clustering, and recommendation systems using Python</p>
+                        <a href="https://coursera.org/verify/6D3W475MLDQY" target="_blank" class="cert-link">
                             <i class="fas fa-external-link-alt"></i> Verify Credential
                         </a>
                     </div>
@@ -517,12 +500,13 @@
                 
                 <div class="achievement-category">
                     <h3>Hackathon Successes</h3>
+                    
                     <div class="hackathon-card glass-card">
                         <div class="hackathon-rank first-place">
                             <span>1<sup>st</sup></span>
                         </div>
                         <h4>GSolve.ai AI Hackathon 2023</h4>
-                        <p>Winner of Genpact's internal AI hackathon with a solution focused on practical AI applications for business processes</p>
+                        <p>Won Genpact's internal AI hackathon with a solution focused on practical AI applications for business processes</p>
                         <a href="https://drive.google.com/file/d/1dyXGtrrbyzp1VjYZeeUNC_xPDjQ9IExM/view?usp=sharing" target="_blank" class="cert-link">
                             <i class="fas fa-trophy"></i> View Certificate
                         </a>
@@ -533,7 +517,7 @@
                             <span>#123</span>
                         </div>
                         <h4>Purchase Pattern Prediction Hackathon</h4>
-                        <p>Geoffrey Hinton Fellowship competition through Univ.ai with focus on retail analytics</p>
+                        <p>Geoffrey Hinton Fellowship competition through Univ.ai with focus on retail analytics using time series forecasting</p>
                     </div>
                     
                     <div class="hackathon-card glass-card">
@@ -541,7 +525,7 @@
                             <span>#160</span>
                         </div>
                         <h4>UHack Sentiments 2.0</h4>
-                        <p>MachineHack competition focused on sentiment analysis in financial contexts</p>
+                        <p>MachineHack competition focused on advanced sentiment analysis in financial contexts</p>
                     </div>
                 </div>
             </div>
