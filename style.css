@@ -1,8 +1,7 @@
 /* ===== Base Styles & Variables ===== */
 :root {
-    --primary-color: #0a192f;
-    --secondary-color: #00C9A7; /* Changed from #64ffda to #00C9A7 for better readability */
-    --secondary-hover: #00B194;
+    --primary-color: #1e40af;
+    --secondary-color: #3b82f6;
     --text-color: #333;
     --light-text: #e6f1ff;
     --background: #f8f9fa;
@@ -14,11 +13,10 @@
 }
 
 .light-mode {
-    --primary-color: #1a2a45;
-    --secondary-color: #00B194;
-    --secondary-hover: #00C9A7;
+    --primary-color: #1e3a8a;
+    --secondary-color: #60a5fa;
     --text-color: #333;
-    --light-text: #0a192f;
+    --light-text: #1e40af;
     --background: #f0f2f5;
     --card-bg: #ffffff;
     --section-bg: #ffffff;
@@ -188,7 +186,7 @@ main {
 }
 
 .gradient-bg {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #172a45 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -201,7 +199,7 @@ main {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 201, 167, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0) 70%);
     pointer-events: none;
 }
 
@@ -224,7 +222,7 @@ main {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-hover) 100%);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #60a5fa 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +237,7 @@ main {
     border-radius: 50%;
     background: var(--primary-color);
     /* Replace with actual profile image */
-    background-image: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="%230a192f"/><text x="50%" y="55%" font-family="Arial" font-size="24" fill="white" text-anchor="middle">SA</text></svg>');
+    background-image: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="%231e40af"/><text x="50%" y="55%" font-family="Arial" font-size="24" fill="white" text-anchor="middle">SA</text></svg>');
     background-size: cover;
 }
 
@@ -263,9 +261,9 @@ main {
 
 .social-links a:hover {
     background: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 201, 167, 0.3);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
 .hero-text {
@@ -318,13 +316,13 @@ main {
 
 .btn-primary {
     background: var(--secondary-color);
-    color: var(--primary-color);
-    box-shadow: 0 4px 20px rgba(0, 201, 167, 0.4);
+    color: white;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 7px 25px rgba(0, 201, 167, 0.6);
+    box-shadow: 0 7px 25px rgba(59, 130, 246, 0.6);
 }
 
 .btn-secondary {
@@ -334,7 +332,7 @@ main {
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 201, 167, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     transform: translateY(-3px);
 }
 
@@ -467,7 +465,7 @@ main {
 }
 
 .timeline-tech span {
-    background: rgba(10, 25, 47, 0.1);
+    background: rgba(30, 64, 175, 0.1);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -495,8 +493,8 @@ main {
 
 .filter-btn.active {
     background: var(--secondary-color);
-    color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(0, 201, 167, 0.4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 .skills-container.advanced {
@@ -545,7 +543,7 @@ main {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--secondary-color), var(--secondary-hover));
+    background: linear-gradient(90deg, var(--secondary-color), #60a5fa);
     border-radius: 4px;
     width: 0;
     transition: width 2s ease-in-out;
@@ -599,7 +597,7 @@ main {
 .advanced-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
-    border-color: rgba(0, 201, 167, 0.3);
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
 .project-image-container {
@@ -627,7 +625,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
+    background: linear-gradient(to top, rgba(30, 64, 175, 0.9), transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -640,20 +638,20 @@ main {
 }
 
 .demo-btn {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-hover) 100%);
-    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #60a5fa 100%);
+    color: white;
     border: none;
     padding: 0.8rem 1.8rem;
     border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0, 201, 167, 0.4);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 .demo-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(0, 201, 167, 0.5);
+    box-shadow: 0 7px 20px rgba(59, 130, 246, 0.5);
 }
 
 .project-subtitle {
@@ -669,6 +667,24 @@ main {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     flex-grow: 1;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--secondary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 0 0.3rem 0.5rem 0;
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .project-links {
@@ -694,7 +710,7 @@ main {
 }
 
 .project-link:hover {
-    background-color: rgba(0, 201, 167, 0.1);
+    background-color: rgba(59, 130, 246, 0.1);
     border-color: var(--secondary-color);
     color: var(--secondary-color);
 }
@@ -706,7 +722,7 @@ main {
 }
 
 .project-link.secondary:hover {
-    background-color: rgba(0, 201, 167, 0.1);
+    background-color: rgba(59, 130, 246, 0.1);
     border-color: var(--secondary-color);
     color: var(--secondary-color);
 }
@@ -789,7 +805,7 @@ main {
 }
 
 .cert-link:hover {
-    background: rgba(0, 201, 167, 0.1);
+    background: rgba(59, 130, 246, 0.1);
     color: var(--secondary-color);
 }
 
@@ -863,7 +879,7 @@ main {
 .contact-item:hover {
     transform: translateY(-5px);
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
 }
 
 .contact-item i {
@@ -873,7 +889,7 @@ main {
 }
 
 .contact-item:hover i {
-    color: var(--primary-color);
+    color: white;
 }
 
 .contact-text h3 {
@@ -919,7 +935,7 @@ main {
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.2);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 /* ===== Glassmorphism effect for cards ===== */
@@ -951,9 +967,9 @@ main {
 }
 
 .theme-toggle:hover {
-    transform: rotate(30deg);
+    transform: rotate(30px);
     background: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
 }
 
 @keyframes float {
