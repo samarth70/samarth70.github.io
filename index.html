@@ -1,535 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Samarth Agarwal | Generative AI Engineer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samarth Agarwal - AI & Data Science Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #38bdf8;
+            margin-top: 60px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #1e293b;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #38bdf8;
+            color: black;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .skills span {
+            display: inline-block;
+            background-color: #334155;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar"></div>
+
+<header>
+    <h1>Samarth Agarwal</h1>
+    <p>Generative AI Engineer | LLM Evaluation Architect | ML Systems Builder</p>
+    <a href="mailto:samarthagrawal526@gmail.com" class="btn">Contact Me</a>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        MS Data Science student at Stony Brook University with industry experience at Genpact and ARMA AI Labs. 
+        I build production-grade AI systems — from LLM evaluation frameworks to full-stack AI applications.
+        My work focuses on measurable AI performance, model comparison, and real-world deployment.
+    </p>
+</section>
+
+<section>
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>Generative AI Prompt Engineer Intern — ARMA AI Labs</h3>
+        <p>
+            Built a normalized LLM evaluation framework combining BLEU, ROUGE, BERTScore, GEval, and faithfulness metrics.
+            Designed a hybrid scoring engine to compare GPT-4, Gemini, and LLaMA models objectively.
+        </p>
     </div>
 
-    <header>
-        <nav>
-            <div class="logo">Samarth Agarwal</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    <div class="card">
+        <h3>Senior Associate Developer — Genpact</h3>
+        <p>
+            Developed enterprise Salesforce CRM solutions for global clients.
+            Built Apex automation systems and Spring Boot integration services for ERP synchronization.
+        </p>
+    </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section gradient-bg">
-            <div class="hero-content">
-                <div class="profile-container">
-                    <div class="profile-circle">
-                        <div class="profile-image"></div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/samarth-agarwal" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/samarth70" target="_blank" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://huggingface.co/Sa-m" target="_blank" title="Hugging Face">
-                            <i class="fas fa-brain"></i>
-                        </a>
-                        <a href="mailto:samarth.agarwal@stonybrook.edu" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-text">
-                    <h1>Samarth Agarwal</h1>
-                    <h2>AI & Data Science Specialist</h2>
-                    <p class="hero-subtitle">Master's in Data Science @ Stony Brook | Salesforce Certified AI Associate | Winner of GSolve.ai Hackathon 2023</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">2+</span>
-                            <span class="stat-label">Years Professional Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">5+</span>
-                            <span class="stat-label">Production AI Systems</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">3</span>
-                            <span class="stat-label">Hackathon Wins</span>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn-primary">View My Work</a>
-                        <a href="#contact" class="btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+</section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a Data Science graduate student at Stony Brook University with a strong background in Machine Learning, Natural Language Processing, and Full Stack Development. My passion lies at the intersection of AI and practical business solutions, where I've developed expertise in building end-to-end intelligent systems.</p>
-                    
-                    <p>With professional experience at Genpact as a Senior Associate Developer and current work in Generative AI at ARMA AI Labs, I specialize in creating robust AI solutions that deliver measurable business value. My recent work focuses on LLM evaluation frameworks, prompt engineering optimization, and building NLP applications that solve real-world problems.</p>
-                    
-                    <p>As a Salesforce Certified AI Associate and winner of the GSolve.ai ML Hackathon 2023, I combine technical excellence with a business-oriented mindset to deliver solutions that are both innovative and practical.</p>
-                </div>
-            </div>
-        </section>
+<section>
+    <h2>Projects</h2>
 
-        <!-- Professional Experience -->
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-badge">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <h3>Generative AI Prompt Engineer Intern</h3>
-                            <span class="timeline-dates">Jun 2025 - Aug 2025</span>
-                        </div>
-                        <h4 class="timeline-company">ARMA AI Labs</h4>
-                        <ul class="timeline-achievements">
-                            <li>Architected a comprehensive LLM evaluation framework that unified disparate metrics (BLEU, BERTScore, GEval) across several domains, resolving inconsistent scoring ranges through normalization while preserving each metric's unique insights</li>
-                            <li>Catalyzed a standardized prompt optimization methodology identifying GPT-4's superior factual accuracy (96%) while revealing Gemini 2.5's optimal cost-performance ratio (40x cheaper with 97% quality retention)</li>
-                            <li>Established reliable dataset of articles across domains that accelerated model selection & prompt refinement by 35%</li>
-                        </ul>
-                        <div class="timeline-tech">
-                            <span>Python</span>
-                            <span>LLM Evaluation</span>
-                            <span>Prompt Engineering</span>
-                            <span>NLP</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-badge">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <h3>Senior Associate Developer</h3>
-                            <span class="timeline-dates">Jul 2022 - Jul 2024</span>
-                        </div>
-                        <h4 class="timeline-company">Genpact</h4>
-                        <ul class="timeline-achievements">
-                            <li>Proficient in utilizing Salesforce technologies including Process Builder, Apex Triggers & Classes to extend functionality for clients including GE Renewable & Huntsman</li>
-                            <li>Developed & maintained Java Spring-based window services for SOQL operations within Salesforce Org, SFTP integration with JDK, and automated alert emails</li>
-                            <li>Recognized as winner of GSolve.ai ML Hackathon 2023 and Internal Genpact Hackathon</li>
-                        </ul>
-                        <div class="timeline-tech">
-                            <span>Salesforce</span>
-                            <span>Apex</span>
-                            <span>Java Spring</span>
-                            <span>SOQL</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-badge">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <h3>Machine Learning Engineer Intern</h3>
-                            <span class="timeline-dates">Jun 2021 - Aug 2021</span>
-                        </div>
-                        <h4 class="timeline-company">TannMann Foundation</h4>
-                        <ul class="timeline-achievements">
-                            <li>Developed a brand logo recognition system using the TensorFlow framework, achieving high accuracy and reliability in identifying brand logos</li>
-                            <li>Collaborated with team members remotely to optimize model performance, significantly reducing processing time</li>
-                        </ul>
-                        <div class="timeline-tech">
-                            <span>TensorFlow</span>
-                            <span>Computer Vision</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="card">
+        <h3>PrepGenie — LLM Interview Coach</h3>
+        <p>
+            AI-powered interview simulation platform with speech recognition, resume analysis, 
+            and real-time feedback using Gemini and BERT.
+        </p>
+        <a href="https://sa-m-prepgenie.hf.space/">Live Demo</a>
+    </div>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2>Technical Expertise</h2>
-            
-            <div class="skills-filters">
-                <button class="filter-btn active" data-filter="all">All Skills</button>
-                <button class="filter-btn" data-filter="ml">Machine Learning</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="cloud">Cloud & DevOps</button>
-                <button class="filter-btn" data-filter="languages">Languages</button>
-            </div>
-            
-            <div class="skills-container advanced">
-                <!-- ML Skills -->
-                <div class="skill-category" data-category="ml">
-                    <h3>Machine Learning</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Python ML Stack</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="95%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">TensorFlow, PyTorch, Scikit-learn, Langchain, BERT</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>NLP & LLMs</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Prompt Engineering, RAG, BERTScore, GEval, LLM Evaluation</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Computer Vision</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">CNN, Style Transfer, Image Classification, Object Detection</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Statistical Analysis</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Hypothesis Testing, Regression, Time Series, Bayesian Statistics</div>
-                    </div>
-                </div>
-                
-                <!-- Web Development Skills -->
-                <div class="skill-category" data-category="web">
-                    <h3>Web Development</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Full Stack Development</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Java, Spring Boot, Hibernate, JavaScript, React</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Salesforce Ecosystem</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="95%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Apex, Process Builder, SOQL, Salesforce AI Associate Certified</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Web Frameworks</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Streamlit, Gradio, Flask, Spring MVC</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>UI/UX Design</span>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="75%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Figma, Material Design, Responsive Design Principles</div>
-                    </div>
-                </div>
-                
-                <!-- Cloud & DevOps Skills -->
-                <div class="skill-category" data-category="cloud">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Cloud Platforms</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">AWS, Heroku, Google Cloud Platform</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>DevOps Tools</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="80%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Docker, Git, GitHub Actions, CI/CD Pipelines</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Database Systems</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">SQL, NoSQL, Firebase, MongoDB</div>
-                    </div>
-                </div>
-                
-                <!-- Languages Skills -->
-                <div class="skill-category" data-category="languages">
-                    <h3>Languages</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Python</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="95%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Data Analysis, ML, Web Scraping, Scripting</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Java</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="90%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Spring Boot, Hibernate, Enterprise Applications</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>SQL & Apex</span>
-                            <span class="skill-level">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">SOQL, Salesforce Development, Database Management</div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>C++ & JavaScript</span>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="75%" style="width: 0;"></div>
-                        </div>
-                        <div class="skill-tools">Algorithm Development, Front-end Interactions</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="card">
+        <h3>LLM Content Evaluation Framework</h3>
+        <p>
+            7-metric hybrid scoring system that standardizes NLP metrics into a unified 0–1 scale.
+            Enables professional AI content validation.
+        </p>
+        <a href="https://sa-m-llm-evaluation-framework.hf.space/">Live Demo</a>
+    </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card advanced-card glass-card">
-                    <div class="project-image-container">
-                        <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/space_screenshot/https___sa-m-manifesto-explainer.hf.space_.png" alt="Manifesto Explainer Interface" class="project-image">
-                        <div class="image-overlay">
-                            <a href="https://sa-m-manifesto-explainer.hf.space/" target="_blank" class="demo-btn">Live Demo</a>
-                        </div>
-                    </div>
-                    <h3>Manifesto Explainer</h3>
-                    <p class="project-subtitle">NLP • Data Visualization • Political Analysis</p>
-                    
-                    <div class="project-description">
-                        An unbiased NLP approach to analyze political party manifestos with sentiment analysis and visualizations. Features PDF upload, search term analysis, AI summaries, and interactive visualizations. Built with Python, NLTK, Streamlit, and deployed on Hugging Face.
-                    </div>
-                    
-                    <div class="project-features">
-                        <span class="feature-tag">PDF Upload</span>
-                        <span class="feature-tag">Sentiment Analysis</span>
-                        <span class="feature-tag">AI Summarization</span>
-                        <span class="feature-tag">Word Clouds</span>
-                        <span class="feature-tag">Auto Translation</span>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="https://sa-m-manifesto-explainer.hf.space/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="https://github.com/samarth70/manifesto-explainer" target="_blank" class="project-link secondary">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card advanced-card glass-card">
-                    <div class="project-image-container">
-                        <img src="https://via.placeholder.com/400x250/1e40af/3b82f6?text=PrepGenie+Mock+Interview" alt="PrepGenie Mock Interview Interface" class="project-image">
-                        <div class="image-overlay">
-                            <a href="#" class="demo-btn">Live Demo</a>
-                        </div>
-                    </div>
-                    <h3>PrepGenie</h3>
-                    <p class="project-subtitle">AI • Full Stack • Interview Preparation</p>
-                    
-                    <div class="project-description">
-                        AI-powered mock interview and resume assistant. Enables users to upload resumes, select target roles, and practice answering tailored questions via text or voice. Uses Google Gemini and BERT embeddings for context-aware feedback.
-                    </div>
-                    
-                    <div class="project-features">
-                        <span class="feature-tag">Resume Analysis</span>
-                        <span class="feature-tag">Voice Interviews</span>
-                        <span class="feature-tag">AI Feedback</span>
-                        <span class="feature-tag">Role-Specific</span>
-                        <span class="feature-tag">Firebase Auth</span>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="#" class="project-link secondary">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card advanced-card glass-card">
-                    <div class="project-image-container">
-                        <img src="https://huggingface.co/datasets/huggingface/badges/resolve/main/space_screenshot/https___sa-m-neural-style-transfer-image-stylization.hf.space_.png" alt="Neural Style Transfer Examples" class="project-image">
-                        <div class="image-overlay">
-                            <a href="https://sa-m-neural-style-transfer-image-stylization.hf.space/" target="_blank" class="demo-btn">Live Demo</a>
-                        </div>
-                    </div>
-                    <h3>Neural Style Transfer</h3>
-                    <p class="project-subtitle">Deep Learning • Computer Vision • Image Processing</p>
-                    
-                    <div class="project-description">
-                        Produces artistic images by blending content and style images. Implements fast style transfer techniques with deep learning. Improved the model by applying gray scaling and rescaling. Deployed as a user-friendly web application on Hugging Face.
-                    </div>
-                    
-                    <div class="project-features">
-                        <span class="feature-tag">Content-Style Blending</span>
-                        <span class="feature-tag">Transfer Learning</span>
-                        <span class="feature-tag">Fast Style Transfer</span>
-                        <span class="feature-tag">TF Hub Models</span>
-                        <span class="feature-tag">Image Optimization</span>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="https://sa-m-neural-style-transfer-image-stylization.hf.space/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="#" class="project-link secondary">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card advanced-card glass-card">
-                    <div class="project-image-container">
-                        <img src="https://via.placeholder.com/400x250/1e40af/3b82f6?text=Cats+vs+Dogs+Classifier" alt="Cats vs Dogs Classifier" class="project-image">
-                        <div class="image-overlay">
-                            <a href="https://sa-m-smart-pet-classifier.hf.space/" target="_blank" class="demo-btn">Live Demo</a>
-                        </div>
-                    </div>
-                    <h3>Smart Pet Classifier</h3>
-                    <p class="project-subtitle">Deep Learning • Mobile Development • Image Classification</p>
-                    
-                    <div class="project-description">
-                        Cat vs Dog image classification model with DenseNet121 architecture achieving 98.4% validation accuracy. Deployed as both a web application and Android app, demonstrating full-stack deployment capabilities.
-                    </div>
-                    
-                    <div class="project-features">
-                        <span class="feature-tag">DenseNet121</span>
-                        <span class="feature-tag">98.4% Accuracy</span>
-                        <span class="feature-tag">Image Augmentation</span>
-                        <span class="feature-tag">Web Deployment</span>
-                        <span class="feature-tag">Android App</span>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="https://sa-m-smart-pet-classifier.hf.space/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
-                        <a href="#" class="project-link secondary">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="card">
+        <h3>Manifesto Explainer — NLP + LLaMA</h3>
+        <p>
+            Interactive manifesto analysis tool using NLP + LLM summarization to extract 
+            policy commitments and contextual meaning.
+        </p>
+    </div>
 
-        <!-- Achievements Section -->
-        <section id="achievements" class="section">
-            <h2>Certifications & Key Achievements</h2>
-            
-            <div class="achievements-container advanced">
-                <div class="achievement-category">
-                    <h3>Professional Certifications</h3>
-                    
-                    <div class="certification-card glass-card">
-                        <div class="cert-badge">
-                            <img src="https://www.salesforce.com/content/dam/web/en_us/www/images/certification/AI-Associate-Badge.png" alt="Salesforce Certified AI Associate">
-                            <div class="verified-badge">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                        </div>
-                        <h4>Salesforce Certified AI Associate</h4>
-                        <p>Validated expertise in implementing AI solutions within the Salesforce ecosystem</p>
-                        <a href="https://www.salesforce.com/trailblazer/samarth12" target="_blank" class="cert-link">
-                            <i class="fas fa-external-link-alt"></i> Verify Credential
-                        </a>
-                    </div>
-                    
-                    <div class="certification-card glass-card">
-                        <div class="cert-badge">
-                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-university-assets.s3.amazonaws.com/5d/3d91d89d8a11e9a993d89c6d56e50a/DeepLearning.AI.png?auto=format%2Ccompress&dpr=1" alt="DeepLearning.ai Certification">
-                            <div class="verified-badge">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                        </div>
-                        <h4
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>Python</span>
+        <span>TensorFlow</span>
+        <span>PyTorch</span>
+        <span>LLMs</span>
+        <span>Prompt Engineering</span>
+        <span>Spring Boot</span>
+        <span>Salesforce</span>
+        <span>AWS</span>
+        <span>SQL</span>
+        <span>Docker</span>
+    </div>
+</section>
+
+<section>
+    <h2>Achievements</h2>
+    <div class="card">
+        <p>🏆 GSolve.ai ML Hackathon Winner (Top 6)</p>
+        <p>🥇 Top 50 in Global Pneumonia Detection Hackathon (2000+ teams)</p>
+        <p>📜 Salesforce Certified AI Associate</p>
+    </div>
+</section>
+
+<footer>
+    <p>
+        <a href="https://github.com/samarth70">GitHub</a> |
+        <a href="https://linkedin.com/in/-samarth-agarwal/">LinkedIn</a>
+    </p>
+    <p>© 2026 Samarth Agarwal</p>
+</footer>
+
+</body>
+</html>
