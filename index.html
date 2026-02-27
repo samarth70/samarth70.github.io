@@ -1,181 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Samarth Agarwal | Generative AI Engineer</title>
     <meta charset="UTF-8">
+    <title>Samarth Agarwal | Generative AI Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-        }
+    <link rel="stylesheet" href="style.css">
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: #38bdf8;
-            margin-top: 60px;
-        }
-
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .card {
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background-color: #1e293b;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #38bdf8;
-            color: black;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        .skills span {
-            display: inline-block;
-            background-color: #334155;
-            padding: 8px 12px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 14px;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/4b8f8b1e0c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<header>
-    <h1>Samarth Agarwal</h1>
-    <p>Generative AI Engineer | LLM Evaluation Architect | ML Systems Builder</p>
-    <a href="mailto:samarthagrawal526@gmail.com" class="btn">Contact Me</a>
+<div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+</div>
+
+<header class="glass-nav">
+    <nav>
+        <a href="#" class="logo">SA.</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section>
+<section class="hero-section gradient-bg">
+    <div class="ai-grid"></div>
+
+    <div class="hero-content">
+        <div class="profile-container">
+            <div class="profile-circle">
+                <div class="profile-image"></div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/samarth70"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/-samarth-agarwal/"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:samarth.agarwal@stonybrook.edu"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-text">
+            <h1>Samarth Agarwal</h1>
+
+            <h2>
+                <span id="typing"></span>
+            </h2>
+
+            <p class="hero-subtitle">
+                I design measurable AI systems — from LLM evaluation frameworks 
+                to production-ready generative AI applications.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="Samarth-Agarwal-Resume.pdf" class="btn-secondary">Download Resume</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-value counter" data-target="6">0</span>
+                    <span class="stat-label">Hackathon Finals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value counter" data-target="4">0</span>
+                    <span class="stat-label">AI Systems Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value counter" data-target="3">0</span>
+                    <span class="stat-label">Enterprise Clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main>
+
+<section id="about" class="section glass-card reveal">
     <h2>About Me</h2>
     <p>
-        MS Data Science student at Stony Brook University with industry experience at Genpact and ARMA AI Labs. 
-        I build production-grade AI systems — from LLM evaluation frameworks to full-stack AI applications.
-        My work focuses on measurable AI performance, model comparison, and real-world deployment.
+        MS Data Science candidate at Stony Brook University with experience at 
+        ARMA AI Labs and Genpact. I specialize in building evaluation-driven 
+        LLM systems, scalable AI tooling, and full-stack ML applications.
     </p>
 </section>
 
-<section>
-    <h2>Experience</h2>
+<section id="projects" class="section reveal">
+    <h2>Featured AI Projects</h2>
 
-    <div class="card">
-        <h3>Generative AI Prompt Engineer Intern — ARMA AI Labs</h3>
-        <p>
-            Built a normalized LLM evaluation framework combining BLEU, ROUGE, BERTScore, GEval, and faithfulness metrics.
-            Designed a hybrid scoring engine to compare GPT-4, Gemini, and LLaMA models objectively.
-        </p>
-    </div>
+    <div class="projects-grid">
 
-    <div class="card">
-        <h3>Senior Associate Developer — Genpact</h3>
-        <p>
-            Developed enterprise Salesforce CRM solutions for global clients.
-            Built Apex automation systems and Spring Boot integration services for ERP synchronization.
-        </p>
-    </div>
+        <div class="advanced-card project-card glass-card">
+            <h3>PrepGenie</h3>
+            <p class="project-subtitle">LLM Interview Simulation Platform</p>
+            <p class="project-description">
+                AI interview system with speech recognition, resume analysis, 
+                and real-time scoring using Gemini and BERT.
+            </p>
+        </div>
 
-</section>
+        <div class="advanced-card project-card glass-card">
+            <h3>LLM Evaluation Framework</h3>
+            <p class="project-subtitle">7-Metric Hybrid Scoring Engine</p>
+            <p class="project-description">
+                Normalized evaluation layer combining BLEU, ROUGE, BERTScore, 
+                GEval and faithfulness metrics.
+            </p>
+        </div>
 
-<section>
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>PrepGenie — LLM Interview Coach</h3>
-        <p>
-            AI-powered interview simulation platform with speech recognition, resume analysis, 
-            and real-time feedback using Gemini and BERT.
-        </p>
-        <a href="https://sa-m-prepgenie.hf.space/">Live Demo</a>
-    </div>
-
-    <div class="card">
-        <h3>LLM Content Evaluation Framework</h3>
-        <p>
-            7-metric hybrid scoring system that standardizes NLP metrics into a unified 0–1 scale.
-            Enables professional AI content validation.
-        </p>
-        <a href="https://sa-m-llm-evaluation-framework.hf.space/">Live Demo</a>
-    </div>
-
-    <div class="card">
-        <h3>Manifesto Explainer — NLP + LLaMA</h3>
-        <p>
-            Interactive manifesto analysis tool using NLP + LLM summarization to extract 
-            policy commitments and contextual meaning.
-        </p>
-    </div>
-
-</section>
-
-<section>
-    <h2>Skills</h2>
-    <div class="skills">
-        <span>Python</span>
-        <span>TensorFlow</span>
-        <span>PyTorch</span>
-        <span>LLMs</span>
-        <span>Prompt Engineering</span>
-        <span>Spring Boot</span>
-        <span>Salesforce</span>
-        <span>AWS</span>
-        <span>SQL</span>
-        <span>Docker</span>
     </div>
 </section>
 
-<section>
-    <h2>Achievements</h2>
-    <div class="card">
-        <p>🏆 GSolve.ai ML Hackathon Winner (Top 6)</p>
-        <p>🥇 Top 50 in Global Pneumonia Detection Hackathon (2000+ teams)</p>
-        <p>📜 Salesforce Certified AI Associate</p>
-    </div>
+<section id="contact" class="section glass-card reveal">
+    <h2>Let's Build Intelligent Systems</h2>
+    <p>Email: samarth.agarwal@stonybrook.edu</p>
 </section>
 
-<footer>
-    <p>
-        <a href="https://github.com/samarth70">GitHub</a> |
-        <a href="https://linkedin.com/in/-samarth-agarwal/">LinkedIn</a>
-    </p>
-    <p>© 2026 Samarth Agarwal</p>
-</footer>
+</main>
+
+<script>
+/* Typing Animation */
+const roles = [
+  "Generative AI Engineer",
+  "LLM Evaluation Architect",
+  "ML Systems Builder"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+const typingElement = document.getElementById("typing");
+
+function type() {
+    if (charIndex < roles[roleIndex].length) {
+        typingElement.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 70);
+    } else {
+        setTimeout(erase, 1500);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 40);
+    } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 300);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", type);
+
+/* Scroll Reveal */
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+
+/* Scroll Progress */
+window.onscroll = function() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("scrollBar").style.width = (winScroll / height) * 100 + "%";
+};
+
+/* Counter Animation */
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+counters.forEach(counter => {
+    const update = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(update, 10);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    update();
+});
+</script>
 
 </body>
 </html>
