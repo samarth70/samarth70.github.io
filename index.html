@@ -449,15 +449,14 @@ box-shadow: 0 18px 50px rgba(0,0,0,0.40);
 position: relative;
 aspect-ratio: 16 / 9;
 border-bottom: 1px solid rgba(255,255,255,0.10);
-background: #0a0b0c; /* Dark background for letterboxing */
+background: #0a0b0c;
 display: grid;
 place-items: center;
 }
 .project-image {
 width: 100%;
 height: 100%;
-/* Changed to contain so full screenshot is visible */
-object-fit: contain; 
+object-fit: contain;
 display: block;
 padding: 0;
 filter: contrast(1.02) saturate(1.03);
@@ -562,14 +561,13 @@ border: 1px solid rgba(255,255,255,0.12);
 background: rgba(255,255,255,0.03);
 font-size: 13px;
 transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-min-width: 44px; /* Ensure icon buttons have enough space */
+min-width: 44px;
 }
 .project-link:hover {
 transform: translateY(-1px);
 background: rgba(255,255,255,0.06);
 border-color: rgba(255,255,255,0.22);
 }
-/* Specific style for icon-only links */
 .project-link.icon-only {
 padding: 10px 14px;
 }
@@ -598,6 +596,11 @@ margin-top: 44px;
 margin-top: 64px;
 }
 .certifications-section {
+margin-top: 64px;
+padding-top: 20px;
+border-top: 1px solid rgba(255,255,255,0.10);
+}
+.achievements-section {
 margin-top: 64px;
 padding-top: 20px;
 border-top: 1px solid rgba(255,255,255,0.10);
@@ -690,11 +693,58 @@ color: rgba(255,255,255,0.85);
 }
 .cert-card h4 {
 margin: 0;
+font-size: 14px;
 }
 .cert-issuer {
 margin: 8px 0 0;
 color: rgba(255,255,255,0.62);
 font-size: 13px;
+}
+/* =========================
+Achievements/Hackathons
+========================= */
+.achievements-grid {
+margin-top: 18px;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+.achievement-card {
+padding: 18px;
+border-radius: var(--radius2);
+border: 1px solid rgba(255,255,255,0.10);
+background: rgba(255,255,255,0.02);
+transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.achievement-card:hover {
+transform: translateY(-1px);
+background: rgba(255,255,255,0.05);
+border-color: rgba(255,255,255,0.20);
+}
+.achievement-icon {
+width: 48px;
+height: 48px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.12);
+background: rgba(0,0,0,0.20);
+display: grid;
+place-items: center;
+color: rgba(255,255,255,0.85);
+margin-bottom: 12px;
+}
+.achievement-card h4 {
+margin: 0;
+font-size: 14px;
+}
+.achievement-rank {
+margin: 6px 0 0;
+color: rgba(255,255,255,0.70);
+font-size: 13px;
+}
+.achievement-org {
+margin: 4px 0 0;
+color: rgba(255,255,255,0.55);
+font-size: 12px;
 }
 /* =========================
 Contact
@@ -831,10 +881,11 @@ Responsive
 .project-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .contact-grid { grid-template-columns: 1fr; }
 .cert-grid { grid-template-columns: 1fr; }
+.achievements-grid { grid-template-columns: 1fr; }
 .nav-dots { right: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-.btn-primary, .btn-secondary, .project-link, .contact-card, .cert-card { transition: none; }
+.btn-primary, .btn-secondary, .project-link, .contact-card, .cert-card, .achievement-card { transition: none; }
 }
 @media (max-width: 640px) {
 .container {
@@ -875,7 +926,8 @@ display: none;
 .timeline-item,
 .cert-card,
 .contact-card,
-.tech-stack {
+.tech-stack,
+.achievement-card {
 border-radius: 18px;
 }
 .principles-grid { gap: 14px; }
@@ -896,8 +948,12 @@ font-size: 12px;
 opacity: 0.8;
 }
 .cert-card,
-.contact-card {
+.contact-card,
+.achievement-card {
 padding: 14px;
+}
+.cert-card,
+.contact-card {
 grid-template-columns: 52px 1fr;
 gap: 12px;
 }
@@ -1099,7 +1155,6 @@ Selected projects that reflect my focus: clear metrics, reliable pipelines, and 
 <!-- Project 1 -->
 <article class="project-card">
 <div class="project-image-container">
-<!-- Placeholder image - replace src with your actual project image -->
 <img src="./images/PrepGenie.png" alt="PrepGenie interface screenshot" class="project-image" loading="lazy" width="800" height="450">
 <div class="project-overlay">
 <span class="project-tag">Featured</span>
@@ -1157,7 +1212,6 @@ Making AI ask personalized questions. I crafted specific prompts for Gemini usin
 <!-- Project 2 -->
 <article class="project-card">
 <div class="project-image-container">
-<!-- Placeholder image - replace src with your actual project image -->
 <img src="./images/EvalGenie.png" alt="EvalGenie dashboard screenshot" class="project-image" loading="lazy" width="800" height="450">
 <div class="project-overlay">
 <span class="project-tag">Pipeline</span>
@@ -1215,7 +1269,6 @@ Metrics aren't on the same scale. I created custom normalization ranges for each
 <!-- Project 3 -->
 <article class="project-card">
 <div class="project-image-container">
-<!-- Placeholder image - replace src with your actual project image -->
 <img src="./images/Manifesto.png" alt="Manifesto Explainer screenshot" class="project-image" loading="lazy" width="800" height="450">
 <div class="project-overlay">
 <span class="project-tag">NLP</span>
@@ -1259,6 +1312,63 @@ Manifestos are messy. I integrated Groq's Llama3-8b model to summarize what part
 </div>
 <div class="project-links">
 <a href="https://sa-m-manifesto-explainer.hf.space/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View live demo">
+<i class="fas fa-external-link-alt" aria-hidden="true"></i>
+</a>
+<a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View source code on GitHub">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
+<a href="#" target="_blank" rel="noopener noreferrer" class="project-link icon-only" aria-label="View documentation">
+<i class="fas fa-arrow-right" aria-hidden="true"></i>
+</a>
+</div>
+</div>
+</article>
+<!-- Project 4 - GestureSynth -->
+<article class="project-card">
+<div class="project-image-container">
+<img src="./images/GestureSynth.png" alt="GestureSynth interface screenshot" class="project-image" loading="lazy" width="800" height="450">
+<div class="project-overlay">
+<span class="project-tag">Computer Vision</span>
+</div>
+</div>
+<div class="project-content">
+<h3 class="project-title">GestureSynth</h3>
+<p class="project-description">
+Real-time Hand Gesture to MIDI Conversion. A vision-based system using Python and MediaPipe that translates hand gestures into MIDI output with low latency.
+</p>
+<div class="project-metrics" role="list">
+<div class="metric" role="listitem">
+<span class="metric-value">30 FPS</span>
+<span class="metric-label">Performance</span>
+</div>
+<div class="metric" role="listitem">
+<span class="metric-value">&lt;80ms</span>
+<span class="metric-label">Latency</span>
+</div>
+<div class="metric" role="listitem">
+<span class="metric-value">40%</span>
+<span class="metric-label">Faster Learning</span>
+</div>
+<div class="metric" role="listitem">
+<span class="metric-value">LLM-Adaptive</span>
+<span class="metric-label">Tuning</span>
+</div>
+</div>
+<div class="project-stack" role="list" aria-label="Technologies used">
+<span>Python</span>
+<span>MediaPipe</span>
+<span>OpenCV</span>
+<span>MIDI</span>
+<span>LLM</span>
+</div>
+<div class="project-insight">
+<strong>Technical Challenge</strong>
+<p>
+Calibrating gesture-to-music mapping in real-time. I built an LLM-powered adaptive tuning module that analyzes note stability metrics to automatically optimize parameters for improved playability.
+</p>
+</div>
+<div class="project-links">
+<a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View live demo">
 <i class="fas fa-external-link-alt" aria-hidden="true"></i>
 </a>
 <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View source code on GitHub">
@@ -1395,7 +1505,7 @@ Graduating May 2026. Looking for roles where AI engineering, data science, and r
 <p class="cert-issuer">Salesforce - 2024</p>
 </div>
 </a>
-<a class="cert-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View AWS Simulation">
+<a class="cert-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View AWS Certification">
 <div class="cert-icon" aria-hidden="true" role="img" aria-label="Certification badge">
 <svg viewBox="0 0 60 60" width="48" height="48">
 <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -1407,6 +1517,95 @@ Graduating May 2026. Looking for roles where AI engineering, data science, and r
 <p class="cert-issuer">AWS - 2023</p>
 </div>
 </a>
+<a class="cert-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View IBM Certification">
+<div class="cert-icon" aria-hidden="true" role="img" aria-label="Certification badge">
+<svg viewBox="0 0 60 60" width="48" height="48">
+<rect x="15" y="15" width="30" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+<path d="M25 25 L35 35 M35 25 L25 35" stroke="currentColor" stroke-width="2"/>
+</svg>
+</div>
+<div>
+<h4>Machine Learning with Python</h4>
+<p class="cert-issuer">IBM - 2023</p>
+</div>
+</a>
+<a class="cert-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View DeepLearning.AI Certification">
+<div class="cert-icon" aria-hidden="true" role="img" aria-label="Certification badge">
+<svg viewBox="0 0 60 60" width="48" height="48">
+<circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+<circle cx="30" cy="30" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+</svg>
+</div>
+<div>
+<h4>ML in Production</h4>
+<p class="cert-issuer">DeepLearning.AI - 2023</p>
+</div>
+</a>
+<a class="cert-card" href="#" target="_blank" rel="noopener noreferrer" aria-label="View Cisco Certification">
+<div class="cert-icon" aria-hidden="true" role="img" aria-label="Certification badge">
+<svg viewBox="0 0 60 60" width="48" height="48">
+<path d="M15 30 L25 20 L35 30 L45 20 L50 30 L45 40 L35 30 L25 40 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+</svg>
+</div>
+<div>
+<h4>Cisco CCNA - Routing & Switching</h4>
+<p class="cert-issuer">Cisco - 2022</p>
+</div>
+</a>
+</div>
+</div>
+<!-- Achievements & Hackathons -->
+<div class="achievements-section">
+<h3 class="subsection-title">Achievements & Hackathons</h3>
+<div class="achievements-grid">
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Trophy icon">
+<i class="fas fa-trophy"></i>
+</div>
+<h4>GSolve.ai ML Hackathon 2023 Winner</h4>
+<p class="achievement-rank">Top 6 Winners</p>
+<p class="achievement-org">Genpact Internal Hackathon</p>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Medal icon">
+<i class="fas fa-medal"></i>
+</div>
+<h4>Purchase Pattern Prediction Hackathon</h4>
+<p class="achievement-rank">Rank 123 / 2000+</p>
+<p class="achievement-org">Univ.ai - Geoffrey Hinton Fellowship</p>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Award icon">
+<i class="fas fa-award"></i>
+</div>
+<h4>UHack Sentiments 2.0</h4>
+<p class="achievement-rank">Rank 160</p>
+<p class="achievement-org">Machine Hack</p>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Star icon">
+<i class="fas fa-star"></i>
+</div>
+<h4>Wipro Sustainability ML Challenge</h4>
+<p class="achievement-rank">Rank 284</p>
+<p class="achievement-org">Hiring Hackathon</p>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Certificate icon">
+<i class="fas fa-certificate"></i>
+</div>
+<h4>JP Morgan Software Engineering</h4>
+<p class="achievement-rank">Virtual Experience</p>
+<p class="achievement-org">JP Morgan Chase & Co.</p>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon" aria-hidden="true" role="img" aria-label="Chart icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<h4>KPMG Data Analytics Consulting</h4>
+<p class="achievement-rank">Virtual Internship</p>
+<p class="achievement-org">KPMG</p>
+</div>
 </div>
 </div>
 </div>
@@ -1425,7 +1624,7 @@ Reach out if you're hiring for AI Engineering, Data Science, or Backend Developm
 </div>
 <div class="contact-info">
 <span class="contact-label">Email</span>
-<span class="contact-value">Send a Message</span>
+<span class="contact-value">samagarwal082@gmail.com</span>
 </div>
 </a>
 <a href="https://www.linkedin.com/in/-samarth-agarwal" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Connect on LinkedIn">
@@ -1691,9 +1890,9 @@ if (!cursor) return () => {};
 if (!canUseFinePointer()) return () => {};
 document.body.classList.add('has-cursor');
 const CARD_SEL =
-'.principle-card, .project-card, .timeline-item, .cert-card, .contact-card, .stack-category';
+'.principle-card, .project-card, .timeline-item, .cert-card, .contact-card, .stack-category, .achievement-card';
 const TEXT_SEL =
-'p, h1, h2, h3, h4, li, .intro-text, .section-description, .project-description, .timeline-points, .contact-value, .cert-issuer';
+'p, h1, h2, h3, h4, li, .intro-text, .section-description, .project-description, .timeline-points, .contact-value, .cert-issuer, .achievement-rank, .achievement-org';
 const POINTER_SEL =
 'a, button, .nav-dot, .project-link, .text-link, .btn-primary, .btn-secondary';
 const BASE = { w: 28, h: 28, r: 999 };
