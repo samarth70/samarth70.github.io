@@ -58,12 +58,17 @@ a { color: inherit; }
 /* ---------- Nav ---------- */
 .top-nav {
 position: fixed; inset: 0 0 auto 0; z-index: 90;
-background: rgba(255, 255, 255, 0.82);
--webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
-border-bottom: 1px solid transparent;
-transition: border-color 200ms ease, box-shadow 200ms ease;
+background: transparent; border-bottom: 1px solid transparent;
+transition: background 220ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
-.top-nav.scrolled { border-bottom-color: var(--line); box-shadow: 0 8px 30px rgba(26, 8, 0, 0.06); }
+.top-nav.scrolled {
+background: rgba(255, 255, 255, 0.86);
+-webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+border-bottom-color: var(--line); box-shadow: 0 8px 30px rgba(26, 8, 0, 0.06);
+}
+.nav-clock { font-family: var(--mono); font-size: 11.5px; letter-spacing: 1.6px; color: rgba(45, 16, 0, 0.6); text-transform: uppercase; }
+.top-nav.scrolled .nav-clock { color: var(--ink-faint); }
+@media (max-width: 1080px) { .nav-clock { display: none; } }
 .top-nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { font-family: var(--display); font-weight: 800; font-size: 24px; text-decoration: none; letter-spacing: -0.3px; }
 .brand span { color: var(--accent); }
@@ -83,27 +88,25 @@ transition: background 160ms ease, transform 160ms ease;
 .nav-toggle { display: none; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; min-height: 100vh; display: grid; align-items: center; padding: 120px 0 40px; overflow: hidden;
-background:
-radial-gradient(48% 42% at 88% 12%, rgba(247, 147, 30, 0.12), transparent 70%),
-radial-gradient(40% 36% at 6% 90%, rgba(247, 147, 30, 0.08), transparent 70%),
-var(--paper);
+.hero { position: relative; min-height: 100vh; display: grid; align-items: center; padding: 116px 0 56px; overflow: hidden;
+background: linear-gradient(180deg, #f8d5b0 0%, #f5954a 55%, #e85500 100%);
+color: #1e1e1e;
 }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 30px; align-items: center; }
-.hero-hi { font-family: var(--script); font-size: clamp(28px, 3.6vw, 44px); color: var(--accent-deep); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 40px; align-items: center; }
+.hero-hi { font-family: var(--script); font-size: clamp(28px, 3.6vw, 44px); color: #7d3200; }
 .hero-name {
 font-family: var(--display); font-weight: 800;
 font-size: clamp(56px, 8.4vw, 108px); line-height: 0.98; letter-spacing: -1.5px; margin-top: 6px;
 }
-.hero-name .accent { color: var(--accent); }
+.hero-name .accent { color: #ffffff; }
 .hero-roles { margin-top: 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .role-swap {
-font-family: var(--mono); font-size: 15px; font-weight: 500; color: var(--accent-deep);
-background: var(--accent-soft); border: 1px solid rgba(247, 147, 30, 0.35);
+font-family: var(--mono); font-size: 15px; font-weight: 500; color: #3d1600;
+background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(255, 255, 255, 0.7);
 padding: 8px 16px; border-radius: 999px; min-width: 220px; text-align: center; transition: opacity 300ms ease;
 }
-.role-static { color: var(--ink-faint); font-size: 14.5px; }
-.hero-tagline { margin-top: 22px; max-width: 560px; color: var(--ink-soft); font-size: 17px; }
+.role-static { color: rgba(45, 16, 0, 0.62); font-size: 14.5px; }
+.hero-tagline { margin-top: 22px; max-width: 560px; color: rgba(40, 14, 0, 0.78); font-size: 17px; }
 .hero-ctas { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-solid {
 text-decoration: none; font-weight: 600; color: #fff; background: var(--ink);
@@ -111,29 +114,50 @@ padding: 15px 30px; border-radius: 999px; transition: background 180ms ease, tra
 }
 .btn-solid:hover { background: var(--accent-deep); transform: translateY(-2px); }
 .btn-ghost {
-text-decoration: none; font-weight: 600; color: var(--ink);
-padding: 15px 30px; border-radius: 999px; border: 1.5px solid var(--line);
+text-decoration: none; font-weight: 600; color: #2b0f00;
+padding: 15px 30px; border-radius: 999px; border: 1.5px solid rgba(60, 22, 0, 0.35);
 transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
-.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+.btn-ghost:hover { border-color: #2b0f00; background: rgba(255,255,255,0.35); transform: translateY(-2px); }
 .hero-stats { margin-top: 40px; display: flex; gap: 40px; flex-wrap: wrap; }
 .stat-value { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1; }
-.stat-value em { color: var(--accent); font-style: normal; }
-.stat-label { margin-top: 6px; color: var(--ink-faint); font-size: 12.5px; letter-spacing: 1.4px; text-transform: uppercase; }
-.hero-badges { margin-top: 34px; display: flex; gap: 20px; flex-wrap: wrap; color: var(--ink-soft); font-size: 14px; align-items: center; }
+.stat-value em { color: #ffffff; font-style: normal; }
+.stat-label { margin-top: 6px; color: rgba(45, 16, 0, 0.62); font-size: 12.5px; letter-spacing: 1.4px; text-transform: uppercase; }
+.hero-badges { margin-top: 34px; display: flex; gap: 20px; flex-wrap: wrap; color: rgba(40, 14, 0, 0.78); font-size: 14px; align-items: center; }
 .pulse-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--green); margin-right: 8px; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); animation: pulse 2s infinite; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
-.hero-art { position: relative; justify-self: center; width: 100%; max-width: 440px; }
-.hero-art svg { width: 100%; height: auto; display: block; }
+.hero-photo { position: relative; justify-self: center; width: 100%; max-width: 400px; }
+.hero-photo::before {
+content: ''; position: absolute; inset: -18px -18px 18px 18px;
+border-radius: 210px 210px 30px 30px; border: 2px dashed rgba(255,255,255,0.55);
+}
+.hero-photo img {
+position: relative; display: block; width: 100%; height: auto;
+border-radius: 200px 200px 26px 26px;
+border: 7px solid rgba(255, 255, 255, 0.9);
+box-shadow: 0 34px 80px rgba(90, 34, 0, 0.36);
+}
 @media (prefers-reduced-motion: no-preference) {
-.av-body { animation: avFloat 6.5s ease-in-out infinite; }
-.av-eyelid { transform-box: fill-box; transform-origin: 50% 0%; transform: scaleY(0); animation: avBlink 5.4s infinite; }
-.av-badge-1 { animation: avFloat 5.2s ease-in-out infinite; }
-.av-badge-2 { animation: avFloat 6.8s ease-in-out infinite 0.6s; }
-.av-badge-3 { animation: avFloat 5.9s ease-in-out infinite 1.2s; }
+.hero-photo { animation: avFloat 7s ease-in-out infinite; }
 }
 @keyframes avFloat { 50% { transform: translateY(-12px); } }
-@keyframes avBlink { 0%, 93%, 100% { transform: scaleY(0); } 95%, 97% { transform: scaleY(1); } }
+
+/* ---------- Dark sections ---------- */
+.section-dark { background: #0d0d0d; color: rgba(255,255,255,0.92); }
+.section-dark.section-darker { background: #080808; }
+.section-dark .section-title { color: #fff; }
+.section-dark .section-sub { color: rgba(255,255,255,0.60); }
+.section-dark .project-title { color: #fff; }
+.section-dark .project-desc { color: rgba(255,255,255,0.66); }
+.section-dark .project-chips span { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.76); }
+.section-dark .link-pill.ghost { color: #fff; border-color: rgba(255,255,255,0.28); }
+.section-dark .link-pill.ghost:hover { background: rgba(255,255,255,0.10); border-color: var(--accent); }
+.section-dark .project-visual { box-shadow: 0 30px 70px rgba(0,0,0,0.55); }
+.section-dark .xp-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.10); }
+.section-dark .xp-card:hover { box-shadow: 0 18px 50px rgba(0,0,0,0.5); }
+.section-dark .xp-role { color: #fff; }
+.section-dark .xp-org { color: rgba(255,255,255,0.50); }
+.section-dark .xp-points { color: rgba(255,255,255,0.68); }
 
 /* ---------- Video Intro (activates when media/intro.mp4 exists) ---------- */
 .video-intro { display: none; position: relative; height: 100vh; min-height: 520px; background: #000; overflow: hidden; }
@@ -184,8 +208,9 @@ animation: bob 2.2s ease-in-out infinite;
 .section-sub { margin-top: 14px; max-width: 640px; color: var(--ink-soft); }
 
 /* ---------- About ---------- */
-#about { background: var(--cream); }
-.about-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 54px; align-items: center; margin-top: 40px; }
+#about { background: var(--paper); }
+.about-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 54px; align-items: start; margin-top: 40px; }
+.about-copy p { font-size: 17px; }
 .about-copy p { color: var(--ink-soft); margin-top: 16px; font-size: 16.5px; }
 .about-copy strong { color: var(--ink); }
 .about-photo-wrap { position: relative; justify-self: center; }
@@ -231,7 +256,7 @@ padding: 11px 22px; border-radius: 999px; transition: background 160ms ease, tra
 .more-projects { margin-top: 56px; text-align: center; }
 
 /* ---------- Experience ---------- */
-#experience { background: var(--cream); }
+#experience.section-darker { background: #080808; }
 .xp-list { margin-top: 44px; display: grid; gap: 20px; }
 .xp-card {
 background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
@@ -289,9 +314,9 @@ padding: 17px 36px; border-radius: 999px; transition: transform 180ms ease, back
 @media (max-width: 1180px) { .social-rail { display: none; } }
 @media (max-width: 900px) {
 .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-.hero-art { max-width: 340px; }
+.hero-photo { max-width: 300px; }
 .about-grid { grid-template-columns: 1fr; gap: 44px; }
-.about-photo-wrap { order: -1; }
+
 .project, .project:nth-child(even) { grid-template-columns: 1fr; gap: 22px; }
 .project:nth-child(even) .project-visual { order: 0; }
 .cred-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -344,6 +369,7 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 <header class="top-nav" id="topNav">
 <div class="top-nav-inner">
 <a href="#home" class="brand">Samarth<span>.</span></a>
+<span class="nav-clock" id="navClock" aria-hidden="true"></span>
 <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
 <span></span><span></span><span></span>
 </button>
@@ -390,59 +416,8 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 <span>&#128205; New York, USA</span>
 </div>
 </div>
-<div class="hero-art" aria-hidden="true">
-<svg viewBox="0 0 460 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated avatar of Samarth Agarwal">
-<defs>
-<linearGradient id="blob" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#ffd9a8"/><stop offset="1" stop-color="#f7931e"/>
-</linearGradient>
-<clipPath id="avClip"><ellipse cx="230" cy="252" rx="82" ry="96"/></clipPath>
-</defs>
-<circle cx="230" cy="244" r="196" fill="url(#blob)" opacity="0.26"/>
-<circle cx="230" cy="244" r="196" fill="none" stroke="#f7931e" stroke-width="2" opacity="0.25"/>
-<g class="av-body">
-<path d="M230 392c58 0 92 20 108 44 12 18 18 42 20 64H102c2-22 8-46 20-64 16-24 50-44 108-44z" fill="#2f4370"/>
-<path d="M196 398l34 46 34-46c-10-5-21-7-34-7s-24 2-34 7z" fill="#ffffff"/>
-<path d="M196 398l-14 12 30 40 18-6z" fill="#263758"/>
-<path d="M264 398l14 12-30 40-18-6z" fill="#263758"/>
-<rect x="203" y="330" width="54" height="70" rx="24" fill="#d18f5e"/>
-<ellipse cx="147" cy="258" rx="13" ry="21" fill="#e9ab7c"/>
-<ellipse cx="313" cy="258" rx="13" ry="21" fill="#e9ab7c"/>
-<ellipse cx="230" cy="252" rx="82" ry="96" fill="#e9ab7c"/>
-<path d="M150 236c0 70 30 122 80 122s80-52 80-122c-5 42-20 62-80 62s-75-20-80-62z" fill="#2a1a0e"/>
-<g clip-path="url(#avClip)">
-<path d="M146 254c-9-86 34-138 90-138s96 46 84 138c-5-46-16-68-46-74-34-7-68 8-90 26-18 15-33 28-38 48z" fill="#2a1a0e"/>
-</g>
-<path d="M232 118c34-20 76-9 92 24-16-20-52-30-92-24z" fill="#3d2715"/>
-<path d="M186 222c14-8 32-8 44-1-13-4-30-3-44 1z" fill="#2a1a0e" stroke="#2a1a0e" stroke-width="9" stroke-linecap="round"/>
-<path d="M230 221c12-7 30-7 44 1-14-4-31-5-44-1z" fill="#2a1a0e" stroke="#2a1a0e" stroke-width="9" stroke-linecap="round"/>
-<ellipse cx="201" cy="250" rx="11" ry="8" fill="#ffffff"/>
-<ellipse cx="259" cy="250" rx="11" ry="8" fill="#ffffff"/>
-<circle cx="202" cy="250" r="5.5" fill="#2a1a0e"/>
-<circle cx="258" cy="250" r="5.5" fill="#2a1a0e"/>
-<circle cx="204" cy="248" r="1.8" fill="#ffffff"/>
-<circle cx="260" cy="248" r="1.8" fill="#ffffff"/>
-<rect class="av-eyelid" x="189" y="239" width="24" height="14" fill="#e9ab7c"/>
-<rect class="av-eyelid" x="247" y="239" width="24" height="14" fill="#e9ab7c"/>
-<path d="M228 262c-4 12-8 18-4 22 3 3 9 3 12 0" fill="none" stroke="#d18f5e" stroke-width="3.5" stroke-linecap="round"/>
-<path d="M204 300c8-6 18-8 26-8s18 2 26 8c-8 4-17 6-26 6s-18-2-26-6z" fill="#2a1a0e"/>
-<path d="M214 314c10 5 22 5 32 0-5 7-11 10-16 10s-11-3-16-10z" fill="#8f4a38"/>
-<g class="av-badges" font-family="monospace" font-weight="bold">
-<g class="av-badge-1" transform="rotate(-8 68 148)">
-<rect x="20" y="124" width="82" height="46" rx="15" fill="#ffffff" stroke="#f7931e" stroke-width="2.5"/>
-<text x="38" y="154" font-size="18" fill="#e07b00">RAG</text>
-</g>
-<g class="av-badge-2" transform="rotate(7 396 124)">
-<rect x="352" y="100" width="80" height="46" rx="15" fill="#1a0800"/>
-<text x="371" y="130" font-size="18" fill="#f7931e">LLM</text>
-</g>
-<g class="av-badge-3" transform="rotate(-6 62 330)">
-<rect x="16" y="306" width="86" height="46" rx="15" fill="#1a0800"/>
-<text x="34" y="336" font-size="18" fill="#f7931e">MCP</text>
-</g>
-</g>
-</g>
-</svg>
+<div class="hero-photo">
+<img src="./images/samarth.webp?v=2" alt="Samarth Agarwal" width="560" height="700" fetchpriority="high">
 </div>
 </div>
 </div>
@@ -471,14 +446,11 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 <div class="fact">GSolve.ai ML Hackathon 2023 Winner</div>
 </div>
 </div>
-<div class="about-photo-wrap">
-<img class="about-photo" src="./images/samarth.webp?v=2" alt="Samarth Agarwal" width="560" height="700" loading="lazy">
-</div>
 </div>
 </div>
 </section>
 
-<section id="projects" class="section">
+<section id="projects" class="section section-dark">
 <div class="container">
 <span class="kicker">Selected Work</span>
 <h2 class="section-title">Projects</h2>
@@ -574,7 +546,7 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 </div>
 </section>
 
-<section id="experience" class="section">
+<section id="experience" class="section section-dark section-darker">
 <div class="container">
 <span class="kicker">Where I've Worked</span>
 <h2 class="section-title">Experience</h2>
@@ -711,6 +683,15 @@ introVideo.muted = !introVideo.muted;
 soundBtn.textContent = introVideo.muted ? 'Tap for sound' : 'Mute';
 if (!introVideo.muted) introVideo.play().catch(() => {});
 });
+}
+// Live New York clock in the nav
+const clock = document.getElementById('navClock');
+if (clock) {
+const tick = () => {
+const t = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: true });
+clock.textContent = 'New York — ' + t;
+};
+tick(); setInterval(tick, 1000);
 }
 // Nav scrolled state
 const topNav = document.getElementById('topNav');
