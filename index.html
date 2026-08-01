@@ -441,6 +441,87 @@ Responsive
 @media (prefers-reduced-motion: reduce) {
 .btn-primary, .btn-secondary, .project-link, .contact-card, .cert-card, .achievement-card { transition: none; }
 }
+/* =========================
+Top Navigation (Phase 2)
+========================= */
+.top-nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+background: transparent; border-bottom: 1px solid transparent;
+transition: background 240ms ease, border-color 240ms ease, backdrop-filter 240ms ease;
+}
+.top-nav.scrolled {
+background: rgba(5, 6, 7, 0.72);
+-webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+border-bottom-color: var(--line);
+}
+.top-nav-inner {
+max-width: var(--max); margin: 0 auto; padding: 0 22px;
+height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
+}
+.brand {
+font-weight: 700; font-size: 17px; letter-spacing: 0.5px; color: var(--fg); text-decoration: none;
+}
+.brand-cursor { color: rgba(255,255,255,0.55); animation: brandBlink 1.1s steps(1) infinite; }
+@keyframes brandBlink { 50% { opacity: 0; } }
+.nav-menu { display: flex; align-items: center; gap: 6px; }
+.nav-link {
+color: var(--muted); text-decoration: none; font-size: 13px; letter-spacing: 0.4px;
+padding: 8px 12px; border-radius: 10px; border: 1px solid transparent;
+transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+.nav-link:hover { color: var(--fg); background: var(--glass); }
+.nav-link.active { color: var(--fg); background: var(--glass); border-color: var(--line); }
+.nav-resume {
+color: var(--fg); text-decoration: none; font-size: 13px; letter-spacing: 0.4px;
+padding: 8px 14px; margin-left: 8px; border-radius: 10px;
+border: 1px solid var(--line2); background: var(--glass);
+transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.nav-resume:hover { background: var(--glass2); border-color: rgba(255,255,255,0.28); transform: translateY(-1px); }
+.nav-toggle { display: none; }
+@media (max-width: 768px) {
+.top-nav { background: rgba(5, 6, 7, 0.72); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+.top-nav-inner { height: 56px; padding: 0 16px; }
+.nav-toggle {
+display: grid; gap: 5px; place-content: center;
+width: 42px; height: 42px; padding: 0; cursor: pointer;
+background: var(--glass); border: 1px solid var(--line); border-radius: 12px;
+}
+.nav-toggle span { display: block; width: 18px; height: 2px; background: var(--fg); border-radius: 2px; transition: transform 200ms ease, opacity 200ms ease; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-menu {
+position: fixed; top: 56px; left: 0; right: 0; z-index: 89;
+flex-direction: column; align-items: stretch; gap: 4px;
+padding: 12px 16px 16px; margin: 0;
+background: rgba(5, 6, 7, 0.94); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+border-bottom: 1px solid var(--line);
+transform: translateY(-8px); opacity: 0; visibility: hidden; pointer-events: none;
+transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
+}
+.nav-menu.open { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
+.nav-link { padding: 13px 14px; font-size: 14px; border-radius: 12px; }
+.nav-resume { margin-left: 0; margin-top: 6px; text-align: center; padding: 13px 14px; border-radius: 12px; }
+}
+section[id] { scroll-margin-top: 72px; }
+/* =========================
+Hero Stats (Phase 2)
+========================= */
+.hero-stats {
+margin-top: 38px; padding-top: 24px; border-top: 1px solid var(--line);
+display: flex; flex-wrap: wrap; gap: 18px 44px;
+}
+.stat { display: grid; gap: 6px; }
+.stat-value { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: var(--fg); }
+.stat-label { font-size: 11.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted2); }
+/* =========================
+Scroll Reveal (Phase 2)
+========================= */
+@media (prefers-reduced-motion: no-preference) {
+.sr { opacity: 0; transform: translateY(16px); }
+.sr.sr-in { opacity: 1; transform: none; transition: opacity 640ms ease, transform 640ms cubic-bezier(.16,.84,.2,1); transition-delay: var(--sr-delay, 0ms); }
+}
 @media (max-width: 640px) {
 .container { width: calc(100% - 28px); }
 .section { padding: 72px 0; }
@@ -481,6 +562,22 @@ Responsive
 </div>
 </div>
 <div class="cursor" aria-hidden="true" role="presentation"></div>
+<header class="top-nav" id="topNav">
+<div class="top-nav-inner">
+<a href="#home" class="brand" aria-label="Samarth Agarwal - back to top">SA<span class="brand-cursor" aria-hidden="true">_</span></a>
+<button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+<span></span><span></span><span></span>
+</button>
+<nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+<a href="#home" data-section="home" class="nav-link active">Home</a>
+<a href="#philosophy" data-section="philosophy" class="nav-link">Philosophy</a>
+<a href="#work" data-section="work" class="nav-link">Work</a>
+<a href="#background" data-section="background" class="nav-link">Background</a>
+<a href="#connect" data-section="connect" class="nav-link">Contact</a>
+<a href="Sam-Agarwal-Resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+</nav>
+</div>
+</header>
 <nav class="nav-dots" aria-label="Section navigation" role="navigation">
 <a href="#home" class="nav-dot active" data-section="home" aria-label="Navigate to home section"></a>
 <a href="#philosophy" class="nav-dot" data-section="philosophy" aria-label="Navigate to philosophy section"></a>
@@ -506,6 +603,12 @@ I build intelligent systems that bridge AI and enterprise workflows. I specializ
 <a href="#work" class="btn-primary" aria-label="View my projects">&rarr; View Projects</a>
 <a href="#connect" class="btn-secondary" aria-label="Get in touch">Get in Touch</a>
 <a href="Sam-Agarwal-Resume.pdf" target="_blank" rel="noopener" class="btn-secondary" aria-label="Open resume (PDF)">Resume</a>
+</div>
+<div class="hero-stats" role="list" aria-label="Quick stats">
+<div class="stat" role="listitem"><span class="stat-value">3+</span><span class="stat-label">Years Experience</span></div>
+<div class="stat" role="listitem"><span class="stat-value">6</span><span class="stat-label">Projects Shipped</span></div>
+<div class="stat" role="listitem"><span class="stat-value">2x</span><span class="stat-label">AI Certified &mdash; SAP &amp; Salesforce</span></div>
+<div class="stat" role="listitem"><span class="stat-value">MS &rsquo;26</span><span class="stat-label">Data Science &mdash; Stony Brook</span></div>
 </div>
 </div>
 </section>
@@ -1321,6 +1424,68 @@ cleanups.forEach(fn => { try { fn(); } catch (_) {} });
 if (document.readyState === 'loading') {
 document.addEventListener('DOMContentLoaded', boot, { once: true });
 } else { boot(); }
+})();
+</script>
+<script>
+(() => {
+'use strict';
+const init = () => {
+// --- Top nav: scrolled state ---
+const topNav = document.getElementById('topNav');
+const onNavScroll = () => topNav.classList.toggle('scrolled', window.scrollY > 24);
+window.addEventListener('scroll', onNavScroll, { passive: true });
+onNavScroll();
+// --- Hamburger menu ---
+const toggle = document.getElementById('navToggle');
+const menu = document.getElementById('navMenu');
+const closeMenu = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
+toggle.addEventListener('click', () => {
+const open = !menu.classList.contains('open');
+menu.classList.toggle('open', open);
+toggle.setAttribute('aria-expanded', String(open));
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+document.addEventListener('click', (e) => { if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu(); });
+// --- Active link tracking ---
+const navLinks = Array.from(menu.querySelectorAll('.nav-link[data-section]'));
+const sections = navLinks.map(l => document.getElementById(l.dataset.section)).filter(Boolean);
+const setActive = (id) => navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === id));
+const trackIo = new IntersectionObserver((entries) => {
+for (const e of entries) { if (e.isIntersecting) setActive(e.target.id); }
+}, { rootMargin: '-30% 0px -55% 0px' });
+sections.forEach(s => trackIo.observe(s));
+// --- Scroll reveal with stagger ---
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+const targets = document.querySelectorAll(
+'.section-title, .section-description, .subsection-title, .principle-card, .project-card, ' +
+'.timeline-item, .cert-card, .contact-card, .achievement-card, .stack-category, .more-projects, .hero-stats .stat'
+);
+const revealIo = new IntersectionObserver((entries) => {
+for (const e of entries) {
+if (!e.isIntersecting) continue;
+e.target.classList.add('sr-in');
+revealIo.unobserve(e.target);
+}
+}, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+targets.forEach(el => {
+const siblings = el.parentElement ? Array.from(el.parentElement.children) : [el];
+const idx = Math.max(0, siblings.indexOf(el));
+el.style.setProperty('--sr-delay', ((idx % 6) * 70) + 'ms');
+el.classList.add('sr');
+revealIo.observe(el);
+});
+// Safety net: if the observer hasn't fired (old browser, quirk), reveal in-view elements
+setTimeout(() => {
+document.querySelectorAll('.sr:not(.sr-in)').forEach(el => {
+if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('sr-in');
+});
+}, 1000);
+}
+};
+if (document.readyState === 'loading') {
+document.addEventListener('DOMContentLoaded', init, { once: true });
+} else { init(); }
 })();
 </script>
 </body>
