@@ -182,11 +182,22 @@ padding: 12px 24px; border-radius: 999px; transition: background 180ms ease, bor
 font-family: var(--mono); font-size: 11px; letter-spacing: 3px; color: rgba(255,255,255,0.6); animation: bob 2.2s ease-in-out infinite; }
 body.has-intro .top-nav, body.has-intro .social-rail { transition: opacity 300ms ease; }
 .social-rail {
-position: fixed; left: 22px; top: 50%; transform: translateY(-50%); z-index: 60;
-display: grid; gap: 26px; writing-mode: vertical-rl;
+position: fixed; left: 24px; top: 50%; transform: translateY(-50%); z-index: 60;
+display: grid; gap: 12px; justify-items: center;
 }
-.social-rail a { text-decoration: none; color: var(--ink-faint); font-size: 11.5px; letter-spacing: 2.4px; text-transform: uppercase; transition: color 160ms ease; }
-.social-rail a:hover { color: var(--accent-deep); }
+.social-rail a {
+width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+color: #2b0f00; text-decoration: none;
+background: rgba(255, 255, 255, 0.62); border: 1px solid rgba(255, 255, 255, 0.8);
+-webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+transition: background 180ms ease, transform 180ms ease, color 180ms ease;
+}
+.social-rail a:hover { background: #fff; color: var(--accent-deep); transform: translateY(-2px); }
+.social-rail svg { width: 17px; height: 17px; fill: currentColor; display: block; }
+.social-rail::after {
+content: ''; width: 1px; height: 72px; margin-top: 6px;
+background: linear-gradient(180deg, rgba(43, 15, 0, 0.35), transparent);
+}
 .scroll-hint {
 position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
 color: var(--ink-faint); font-size: 11px; letter-spacing: 2.6px; text-transform: uppercase;
@@ -386,9 +397,15 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 </header>
 
 <aside class="social-rail" aria-label="Social links">
-<a href="https://github.com/samarth70" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a href="https://www.linkedin.com/in/-samarth-agarwal" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a href="mailto:samarth.agarwal@stonybrook.edu">Email</a>
+<a href="https://github.com/samarth70" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+</a>
+<a href="https://www.linkedin.com/in/-samarth-agarwal" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.2V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4V9z"/></svg>
+</a>
+<a href="mailto:samarth.agarwal@stonybrook.edu" title="Email" aria-label="Email">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.4l8 5 8-5V7H4zm16 3.15-7.42 4.63a1 1 0 0 1-1.16 0L4 10.15V17h16v-6.85z"/></svg>
+</a>
 </aside>
 
 <section id="home" class="hero">
