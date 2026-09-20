@@ -245,9 +245,37 @@ border-radius: 28px; background: var(--accent); opacity: 0.9; z-index: -1; trans
 display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; align-items: center;
 }
 .project:nth-child(even) .project-visual { order: 2; }
-.project-visual { position: relative; border-radius: var(--radius); overflow: hidden; background: #101010; box-shadow: 0 28px 70px rgba(26, 8, 0, 0.20); }
+.project-visual { position: relative; border-radius: var(--radius); overflow: hidden; background: #101010; box-shadow: 0 28px 70px rgba(26, 8, 0, 0.20); cursor: pointer; }
 .project-visual img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: contain; transition: transform 500ms cubic-bezier(.16,.84,.2,1); }
-.project:hover .project-visual img { transform: scale(1.04); }
+.project:hover .project-visual img { transform: scale(1.03); }
+.visual-badge {
+position: absolute; top: 14px; left: 14px; z-index: 4;
+display: inline-flex; align-items: center; gap: 6px;
+background: rgba(10, 10, 14, 0.78); backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.18); color: #fff;
+padding: 5px 12px; border-radius: 999px; font-family: var(--mono);
+font-size: 11.5px; font-weight: 600; letter-spacing: 0.5px;
+}
+.visual-badge::before {
+content: ''; width: 7px; height: 7px; border-radius: 50%;
+background: var(--green); box-shadow: 0 0 8px var(--green);
+}
+.play-btn-overlay {
+position: absolute; inset: 0; z-index: 5;
+display: grid; place-items: center;
+background: rgba(0, 0, 0, 0.28); opacity: 0;
+transition: opacity 240ms ease;
+pointer-events: none;
+}
+.project-visual:hover .play-btn-overlay { opacity: 1; }
+.play-circle {
+width: 62px; height: 62px; border-radius: 50%;
+background: rgba(247, 147, 30, 0.92); backdrop-filter: blur(8px);
+box-shadow: 0 10px 30px rgba(247, 147, 30, 0.45);
+display: grid; place-items: center; color: #fff; font-size: 22px;
+transform: scale(0.88); transition: transform 240ms ease;
+}
+.project-visual:hover .play-circle { transform: scale(1); }
 .project-num { font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--accent-deep); }
 .project-title { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.1; margin-top: 6px; }
 .project-desc { margin-top: 12px; color: var(--ink-soft); font-size: 15.5px; }
@@ -260,11 +288,51 @@ border: 1px solid var(--line); background: #fff; padding: 6px 12px; border-radiu
 .link-pill {
 text-decoration: none; font-weight: 600; font-size: 14px; color: #fff; background: var(--accent);
 padding: 11px 22px; border-radius: 999px; transition: background 160ms ease, transform 160ms ease;
+cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
 }
 .link-pill:hover { background: var(--accent-deep); transform: translateY(-2px); }
 .link-pill.ghost { color: var(--ink); background: transparent; border: 1.5px solid var(--line); }
 .link-pill.ghost:hover { background: var(--accent-soft); border-color: var(--accent); }
+.link-pill.video-pill { background: #111827; border: 1.5px solid rgba(247, 147, 30, 0.6); color: #fff; }
+.link-pill.video-pill:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .more-projects { margin-top: 56px; text-align: center; }
+
+/* Video Demo Lightbox Modal */
+.demo-modal-backdrop {
+position: fixed; inset: 0; z-index: 9999;
+background: rgba(3, 7, 18, 0.88); backdrop-filter: blur(16px);
+display: none; place-items: center; padding: 24px;
+opacity: 0; transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.demo-modal-backdrop.open { display: grid; opacity: 1; }
+.demo-modal-card {
+position: relative; width: 100%; max-width: 980px;
+background: #090d16; border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 20px; overflow: hidden;
+box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+transform: scale(0.94); transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.demo-modal-backdrop.open .demo-modal-card { transform: scale(1); }
+.demo-modal-header {
+padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
+background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.demo-modal-title { font-family: var(--display); font-weight: 700; font-size: 18px; color: #fff; }
+.demo-modal-close {
+background: rgba(255, 255, 255, 0.08); border: none; color: #cbd5e1;
+width: 36px; height: 36px; border-radius: 50%; font-size: 18px;
+cursor: pointer; display: grid; place-items: center; transition: background 150ms ease, color 150ms ease;
+}
+.demo-modal-close:hover { background: var(--accent); color: #fff; }
+.demo-modal-body { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; }
+.demo-modal-body video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.demo-modal-footer {
+padding: 14px 24px; font-size: 13.5px; color: #94a3b8;
+display: flex; justify-content: space-between; align-items: center;
+background: rgba(255, 255, 255, 0.02); border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.demo-modal-footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.demo-modal-footer a:hover { text-decoration: underline; }
 
 /* ---------- Experience ---------- */
 #experience.section-darker { background: #080808; }
@@ -519,26 +587,107 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 <div class="project-list">
 
 <article class="project">
-<div class="project-visual"><img src="./images/PrepGenie.webp" alt="PrepGenie interview coach interface" loading="lazy" width="1000" height="563"></div>
+<div class="project-visual" data-demo-video="media/parammem.mp4" data-demo-title="ParamMem: Augmenting Language Agents with Parametric Reflective Memory (ICLR 2025)" data-demo-link="https://github.com/samarth70/ParamMem">
+<span class="visual-badge">Auto-Looping Demo</span>
+<img src="./media/parammem.gif" alt="ParamMem research dashboard demo" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
 <div>
-<div class="project-num">01 &mdash; Edge AI</div>
+<div class="project-num">01 &mdash; AI Research (ICLR 2025)</div>
+<h3 class="project-title">ParamMem: Parametric Reflective Memory</h3>
+<p class="project-desc">Novel architecture internalizing error-correction patterns via LoRA adapters and high-temperature sampling (&tau; &gt; 0.7) &mdash; eliminating agent reflection collapse, cutting latency 94% (45.2s &rarr; 2.8s on Groq LPUs), and beating Reflexion baselines on HumanEval &amp; GSM8K.</p>
+<div class="project-chips"><span>ICLR 2025</span><span>PyTorch</span><span>LoRA</span><span>Groq LPU</span><span>ChromaDB</span></div>
+<div class="project-links">
+<button class="link-pill video-pill" data-open-demo="media/parammem.mp4" data-demo-title="ParamMem: Parametric Reflective Memory (ICLR 2025)" data-demo-link="https://github.com/samarth70/ParamMem">&#9658; Watch Launch Video</button>
+<a class="link-pill ghost" href="https://github.com/samarth70/ParamMem" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+
+<article class="project">
+<div class="project-visual" data-demo-video="media/prepgenie.mp4" data-demo-title="PrepGenie: Edge-Native AI Interview Preparation Platform" data-demo-link="https://prepgenie.pages.dev/">
+<span class="visual-badge">Auto-Looping Demo</span>
+<img src="./media/prepgenie.gif" alt="PrepGenie interview coach interface" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
+<div>
+<div class="project-num">02 &mdash; Edge AI</div>
 <h3 class="project-title">PrepGenie: LLM Interview Coach</h3>
-<p class="project-desc">Edge-native interview platform with resume-aware questions and a Gemini &rarr; Groq &rarr; Mistral recursive failover chain. 120ms average TTFB, sub-100ms cold starts, 99.9% uptime.</p>
-<div class="project-chips"><span>Pyodide/WASM</span><span>Edge Native</span><span>LLM-as-Judge</span><span>Failover</span></div>
+<p class="project-desc">Edge-native interview platform powered by Cloudflare Python Workers (Pyodide WASM), Cloudflare D1 distributed SQL, and a Gemini &rarr; Groq &rarr; Mistral recursive failover chain. 40ms TTFB, sub-100ms cold starts, and 99.9% uptime.</p>
+<div class="project-chips"><span>Cloudflare Workers</span><span>WASM/pypdf</span><span>Cloudflare D1</span><span>Recursive Failover</span></div>
 <div class="project-links">
 <a class="link-pill" href="https://prepgenie.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+<button class="link-pill video-pill" data-open-demo="media/prepgenie.mp4" data-demo-title="PrepGenie: Edge-Native AI Interview Coach" data-demo-link="https://prepgenie.pages.dev/">&#9658; Watch Launch Video</button>
 <a class="link-pill ghost" href="https://github.com/samarth70/Prepgenie-Mock-Interview-system" target="_blank" rel="noopener noreferrer">GitHub</a>
 </div>
 </div>
 </article>
 
 <article class="project">
-<div class="project-visual"><img src="./images/EvalGenie.webp" alt="LLM evaluation framework dashboard" loading="lazy" width="1000" height="563"></div>
+<div class="project-visual" data-demo-video="media/flowops.mp4" data-demo-title="FlowOps AI: Autonomous Agentic CRM Deal Desk & Evaluation Suite" data-demo-link="https://github.com/samarth70/flowops-ai">
+<span class="visual-badge">Auto-Looping Demo</span>
+<img src="./media/flowops.gif" alt="FlowOps AI Deal Desk Interface" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
 <div>
-<div class="project-num">02 &mdash; LLM Pipeline</div>
+<div class="project-num">03 &mdash; Enterprise Agentic AI</div>
+<h3 class="project-title">FlowOps AI: Autonomous CRM Deal Desk</h3>
+<p class="project-desc">Stateful multi-agent CRM orchestrator built with LangGraph, FastAPI, and React. Automates lead triage, 0-100 BANT scoring, and HITL margin guardrails with real-time Langfuse tracing and 7 DeepEval benchmark metrics.</p>
+<div class="project-chips"><span>LangGraph</span><span>FastAPI</span><span>Langfuse Tracing</span><span>DeepEval</span><span>HITL Guardrails</span></div>
+<div class="project-links">
+<button class="link-pill video-pill" data-open-demo="media/flowops.mp4" data-demo-title="FlowOps AI: Autonomous CRM Deal Desk" data-demo-link="https://github.com/samarth70/flowops-ai">&#9658; Watch Launch Video</button>
+<a class="link-pill ghost" href="https://github.com/samarth70/flowops-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+
+<article class="project">
+<div class="project-visual" data-demo-video="media/pentest.mp4" data-demo-title="Autonomous AI Penetration Testing Framework" data-demo-link="https://github.com/samarth70/AI-Pentest-Scanner">
+<span class="visual-badge">Auto-Looping Demo</span>
+<img src="./media/pentest.gif" alt="AI penetration testing framework" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
+<div>
+<div class="project-num">04 &mdash; Security AI</div>
+<h3 class="project-title">Autonomous AI Penetration Testing</h3>
+<p class="project-desc">Multi-agent cybersecurity pipeline chaining Recon (Nmap, Shodan API), Vulnerability Scanning (NVD CVE API, CVSS), Exploit Synthesis, and Strategic Reporting powered by Groq Llama-3.1-70B with Gemini fallback and strict SSRF guardrails.</p>
+<div class="project-chips"><span>Llama 3.1 70B</span><span>NVD API</span><span>CVSS</span><span>SSRF Guardrails</span><span>Docker</span></div>
+<div class="project-links">
+<a class="link-pill" href="https://ai-pentest-scanner.sam747331.workers.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+<button class="link-pill video-pill" data-open-demo="media/pentest.mp4" data-demo-title="Autonomous AI Pentest Scanner" data-demo-link="https://github.com/samarth70/AI-Pentest-Scanner">&#9658; Watch Demo Clip</button>
+<a class="link-pill ghost" href="https://github.com/samarth70/AI-Pentest-Scanner" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+
+<article class="project">
+<div class="project-visual" data-demo-video="media/stocksdash.mp4" data-demo-title="MarketPulse: Real-Time Financial Streaming Pipeline" data-demo-link="https://marketpulse-91t.pages.dev/">
+<span class="visual-badge">Auto-Looping Demo</span>
+<img src="./media/stocksdash.gif" alt="Real-time stocks dashboard" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
+<div>
+<div class="project-num">05 &mdash; Serverless Streaming</div>
+<h3 class="project-title">Real-Time Stocks Pipeline (MarketPulse)</h3>
+<p class="project-desc">Migrated from a heavyweight Kafka + Snowflake + Airflow modern data stack to global Cloudflare Workers (V8), D1, R2, React 18, and D3.js. Dynamic edge caching cuts external API load by 90% at $0 idle compute cost.</p>
+<div class="project-chips"><span>Cloudflare Workers</span><span>D1 SQLite</span><span>R2 Object Store</span><span>React 18</span><span>D3.js</span></div>
+<div class="project-links">
+<a class="link-pill" href="https://marketpulse-91t.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+<button class="link-pill video-pill" data-open-demo="media/stocksdash.mp4" data-demo-title="MarketPulse Serverless Pipeline" data-demo-link="https://marketpulse-91t.pages.dev/">&#9658; Watch Launch Video</button>
+<a class="link-pill ghost" href="https://github.com/samarth70/real-time-stocks-serverless" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+</article>
+
+<article class="project">
+<div class="project-visual">
+<img src="./images/EvalGenie.webp" alt="LLM evaluation framework dashboard" loading="lazy" width="1000" height="563">
+</div>
+<div>
+<div class="project-num">06 &mdash; LLM Evaluation Pipeline</div>
 <h3 class="project-title">LLM Content Evaluation Framework</h3>
-<p class="project-desc">Unified DeepEval pipeline benchmarking GPT-4, Gemini 2.5, and LLaMA 3-70B across 7 normalized metrics &mdash; revealing 96% GPT-4 accuracy and 40x Gemini cost-efficiency for dynamic routing.</p>
-<div class="project-chips"><span>DeepEval</span><span>Python</span><span>BLEU/BERTScore</span><span>G-Eval</span></div>
+<p class="project-desc">Standardized evaluation engine for professional content rewriting benchmarking GPT-4 (96% factuality), Gemini 2.5 Flash (40x cheaper), and LLaMA 3-70B across 7 normalized metrics (BLEU, ROUGE, BERTScore, DeepEval G-Eval).</p>
+<div class="project-chips"><span>DeepEval</span><span>LLM-as-Judge</span><span>BLEU/BERTScore</span><span>Metric Normalization</span></div>
 <div class="project-links">
 <a class="link-pill" href="https://sa-m-llm-evaluation-framework.hf.space/" target="_blank" rel="noopener noreferrer">Live Demo</a>
 </div>
@@ -546,56 +695,19 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 </article>
 
 <article class="project">
-<div class="project-visual"><img src="./images/PentestAgent.webp" alt="AI penetration testing framework" loading="lazy" width="1000" height="563"></div>
+<div class="project-visual" data-demo-video="media/gesturesynth.mp4" data-demo-title="GestureSynth: Gestures to Real-Time MIDI" data-demo-link="https://github.com/samarth70/A-Vision-Based-Hand-Gesture-System-for-Expressive-Musical-Performance">
+<span class="visual-badge">Demo Video</span>
+<img src="./images/GestureSynth.webp" alt="GestureSynth hand gesture to MIDI" loading="lazy" width="1000" height="563">
+<div class="play-btn-overlay"><div class="play-circle">&#9658;</div></div>
+</div>
 <div>
-<div class="project-num">03 &mdash; Security AI</div>
-<h3 class="project-title">Autonomous AI Penetration Testing</h3>
-<p class="project-desc">Multi-agent cybersecurity framework orchestrating recon, vulnerability assessment, and exploitation agents. 95% SQLi / 90% XSS detection, saving $10K+/yr in scanner costs.</p>
-<div class="project-chips"><span>MCP</span><span>Llama 3.3 70B</span><span>OWASP</span><span>Docker</span></div>
-<div class="project-links">
-<a class="link-pill" href="https://ai-pentest-scanner.sam747331.workers.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-<a class="link-pill ghost" href="https://github.com/samarth70/AI-Pentest-Scanner" target="_blank" rel="noopener noreferrer">GitHub</a>
-</div>
-</div>
-</article>
-
-<article class="project">
-<div class="project-visual"><img src="./images/StocksDash.webp" alt="Real-time stocks dashboard" loading="lazy" width="1000" height="563"></div>
-<div>
-<div class="project-num">04 &mdash; Serverless</div>
-<h3 class="project-title">Real-Time Stocks Dashboard</h3>
-<p class="project-desc">Global serverless financial dashboard on V8 isolates with on-demand caching &mdash; sub-60s data latency, 90% fewer API calls, zero idle compute cost.</p>
-<div class="project-chips"><span>React 18</span><span>Cloudflare D1/R2</span><span>D3.js</span><span>Finnhub</span></div>
-<div class="project-links">
-<a class="link-pill" href="https://marketpulse-91t.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-<a class="link-pill ghost" href="https://github.com/samarth70/real-time-stocks-serverless" target="_blank" rel="noopener noreferrer">GitHub</a>
-</div>
-</div>
-</article>
-
-<article class="project">
-<div class="project-visual"><img src="./images/GestureSynth.webp" alt="GestureSynth hand gesture to MIDI" loading="lazy" width="1000" height="563"></div>
-<div>
-<div class="project-num">05 &mdash; Computer Vision</div>
+<div class="project-num">07 &mdash; Computer Vision &amp; HCI</div>
 <h3 class="project-title">GestureSynth: Gestures to MIDI</h3>
-<p class="project-desc">Vision-based system translating hand gestures into live MIDI at 30 FPS with &lt;80ms latency, plus an LLM-powered adaptive tuning module that speeds up learning by 40%.</p>
-<div class="project-chips"><span>MediaPipe</span><span>OpenCV</span><span>MIDI</span><span>PyQt5</span></div>
+<p class="project-desc">Vision-based HCI system converting hand kinematics into musical MIDI in real-time at 30 FPS (&lt;80ms latency) using MediaPipe and an adaptive LLM tuning loop that accelerates user learning curves by 40%.</p>
+<div class="project-chips"><span>MediaPipe</span><span>OpenCV</span><span>MIDI</span><span>PyQt5</span><span>HCI Design</span></div>
 <div class="project-links">
+<button class="link-pill video-pill" data-open-demo="media/gesturesynth.mp4" data-demo-title="GestureSynth: Gestures to MIDI Demo" data-demo-link="https://github.com/samarth70/A-Vision-Based-Hand-Gesture-System-for-Expressive-Musical-Performance">&#9658; Watch Demo Video</button>
 <a class="link-pill ghost" href="https://github.com/samarth70/A-Vision-Based-Hand-Gesture-System-for-Expressive-Musical-Performance" target="_blank" rel="noopener noreferrer">GitHub</a>
-</div>
-</div>
-</article>
-
-<article class="project">
-<div class="project-visual"><img src="./images/Manifesto.webp" alt="Manifesto Explainer NLP platform" loading="lazy" width="1000" height="563"></div>
-<div>
-<div class="project-num">06 &mdash; NLP</div>
-<h3 class="project-title">Manifesto Explainer</h3>
-<p class="project-desc">NLP platform turning dense political manifestos into accessible insights &mdash; sentiment analysis, Llama-3 summarization, party symbol detection, and multilingual auto-translation.</p>
-<div class="project-chips"><span>Spring Boot</span><span>NLTK</span><span>Llama-3</span><span>Groq</span></div>
-<div class="project-links">
-<a class="link-pill" href="https://manifesto-explainer.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-<a class="link-pill ghost" href="https://github.com/samarth70/Manifesto-Explainer" target="_blank" rel="noopener noreferrer">GitHub</a>
 </div>
 </div>
 </article>
@@ -668,10 +780,87 @@ transition: transform 220ms ease, opacity 220ms ease, visibility 220ms ease;
 </div>
 </footer>
 
+<!-- Project Video Demo Lightbox Modal -->
+<div id="demoModal" class="demo-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="demo-modal-card">
+    <div class="demo-modal-header">
+      <span class="demo-modal-title" id="modalTitle">Project Demo</span>
+      <button class="demo-modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+    </div>
+    <div class="demo-modal-body">
+      <video id="modalVideo" controls playsinline preload="auto"></video>
+    </div>
+    <div class="demo-modal-footer">
+      <span id="modalCaption">18-second launch demo &amp; architectural walkthrough</span>
+      <a id="modalRepoLink" href="#" target="_blank" rel="noopener noreferrer">View Project &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <script>
 (() => {
 'use strict';
 const init = () => {
+// Video Demo Lightbox Modal Logic
+const modal = document.getElementById('demoModal');
+const modalVideo = document.getElementById('modalVideo');
+const modalTitle = document.getElementById('modalTitle');
+const modalClose = document.getElementById('modalClose');
+const modalRepoLink = document.getElementById('modalRepoLink');
+
+const openDemoModal = (videoSrc, title, link) => {
+  if (!modal || !modalVideo) return;
+  modalVideo.src = videoSrc;
+  if (modalTitle) modalTitle.textContent = title || 'Project Demo';
+  if (modalRepoLink) {
+    if (link) {
+      modalRepoLink.href = link;
+      modalRepoLink.style.display = 'inline-block';
+    } else {
+      modalRepoLink.style.display = 'none';
+    }
+  }
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  modalVideo.play().catch(() => {});
+};
+
+const closeDemoModal = () => {
+  if (!modal || !modalVideo) return;
+  modalVideo.pause();
+  modalVideo.removeAttribute('src');
+  modalVideo.load();
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+};
+
+if (modalClose) modalClose.addEventListener('click', closeDemoModal);
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeDemoModal();
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+    closeDemoModal();
+  }
+});
+
+// Attach click listeners to all project visuals and demo buttons
+document.querySelectorAll('[data-open-demo]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openDemoModal(btn.dataset.openDemo, btn.dataset.demoTitle, btn.dataset.demoLink);
+  });
+});
+
+document.querySelectorAll('.project-visual[data-demo-video]').forEach(visual => {
+  visual.addEventListener('click', () => {
+    openDemoModal(visual.dataset.demoVideo, visual.dataset.demoTitle, visual.dataset.demoLink);
+  });
+});
 // Video intro: only activates if media/intro.mp4 actually exists
 const vi = document.getElementById('videoIntro');
 const introVideo = document.getElementById('introVideo');
